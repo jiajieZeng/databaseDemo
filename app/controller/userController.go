@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"databaseDemo/common"
-	"databaseDemo/model"
+	"databaseDemo/app/common"
+	model2 "databaseDemo/app/model"
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
 	"net/http"
@@ -14,7 +14,7 @@ func Register(ctx *gin.Context) {
 
 	//获取参数
 	//此处使用Bind()函数，可以处理不同格式的前端数据
-	var requestUser model.User
+	var requestUser model2.User
 	ctx.Bind(&requestUser)
 	name := requestUser.Name
 	telephone := requestUser.Telephone
@@ -44,7 +44,7 @@ func Register(ctx *gin.Context) {
 	}
 
 	//判断手机号是否存在
-	var user model.User
+	var user model2.User
 	db.Where("telephone = ?", telephone).First(&user)
 	if user.ID != 0 {
 		ctx.JSON(http.StatusUnprocessableEntity, gin.H{
@@ -63,7 +63,7 @@ func Register(ctx *gin.Context) {
 		})
 		return
 	}
-	newUser := model.User{
+	newUser := model2.User{
 		Name:      name,
 		Telephone: telephone,
 		Password:  string(hasedPassword),
@@ -79,7 +79,7 @@ func Register(ctx *gin.Context) {
 
 func QueryFirst(ctx *gin.Context) {
 	db := common.GetDB()
-	var user model.User
+	var user model2.User
 	db.First(&user)
 	ctx.JSON(http.StatusUnprocessableEntity, gin.H{
 		"code":       201,
@@ -92,7 +92,7 @@ func QueryFirst(ctx *gin.Context) {
 
 func RawSQL(ctx *gin.Context) {
 	db := common.GetDB()
-	var requestBody model.RequestBody
+	var requestBody model2.RequestBody
 	if err := ctx.ShouldBindJSON(&requestBody); err != nil {
 		panic("RawSQL: ctx.ShouldBindJSON failed\n")
 	}
@@ -110,7 +110,7 @@ func RawSQL(ctx *gin.Context) {
 	// 	"telephone":  result.Telephone,
 	// 	"password":   result.Password,
 	// })
-	var users []model.UserResult
+	var users []model2.UserResult
 	db.Raw(sql).Scan(&users)
 	ctx.JSON(http.StatusOK, users)
 
@@ -122,7 +122,7 @@ func Login(ctx *gin.Context) {
 
 	//获取参数
 	//此处使用Bind()函数，可以处理不同格式的前端数据
-	var requestUser model.User
+	var requestUser model2.User
 	ctx.Bind(&requestUser)
 	telephone := requestUser.Telephone
 	password := requestUser.Password
@@ -144,7 +144,7 @@ func Login(ctx *gin.Context) {
 	}
 
 	//判断手机号是否存在
-	var user model.User
+	var user model2.User
 	db.Where("telephone = ?", telephone).First(&user)
 	if user.ID == 0 {
 		ctx.JSON(http.StatusUnprocessableEntity, gin.H{

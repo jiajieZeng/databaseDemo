@@ -1,8 +1,7 @@
 package main
 
 import (
-	"databaseDemo/controller"
-
+	"databaseDemo/app/controller"
 	"github.com/gin-gonic/gin"
 )
 
