@@ -1,7 +1,6 @@
 package main
 
 import (
-	"databaseDemo/app/common"
 	"databaseDemo/bootstrap"
 	"databaseDemo/global"
 	"github.com/gin-gonic/gin"
@@ -16,9 +15,17 @@ func main() {
 	global.App.Log.Info("log init success!")
 
 	// 获取初始化的数据库
-	db := common.InitDB()
+	//db := common.InitDB()
 	// 延迟关闭数据库
-	defer db.Close()
+	//defer db.Close()
+
+	global.App.DB = bootstrap.InitializeDB()
+	defer func() {
+		if global.App.DB != nil {
+			db, _ := global.App.DB.DB()
+			db.Close()
+		}
+	}()
 
 	// 创建一个默认的路由引擎
 	r := gin.Default()

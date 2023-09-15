@@ -1,8 +1,9 @@
 package controller
 
 import (
-	"databaseDemo/app/common"
 	model2 "databaseDemo/app/model"
+	"databaseDemo/global"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
 	"net/http"
@@ -10,7 +11,7 @@ import (
 
 func Register(ctx *gin.Context) {
 
-	db := common.GetDB()
+	db := global.App.DB
 
 	//获取参数
 	//此处使用Bind()函数，可以处理不同格式的前端数据
@@ -19,7 +20,7 @@ func Register(ctx *gin.Context) {
 	name := requestUser.Name
 	telephone := requestUser.Telephone
 	password := requestUser.Password
-
+	global.App.Log.Info("Register: get info success" + fmt.Sprintf("  %s %s %s", name, telephone, password))
 	//数据验证
 	if len(name) == 0 {
 		ctx.JSON(http.StatusUnprocessableEntity, gin.H{
@@ -42,7 +43,7 @@ func Register(ctx *gin.Context) {
 		})
 		return
 	}
-
+	global.App.Log.Info("Register: check success")
 	//判断手机号是否存在
 	var user model2.User
 	db.Where("telephone = ?", telephone).First(&user)
@@ -53,7 +54,7 @@ func Register(ctx *gin.Context) {
 		})
 		return
 	}
-
+	global.App.Log.Info("Register: check exist success")
 	//创建用户
 	hasedPassword, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
 	if err != nil {
@@ -63,13 +64,14 @@ func Register(ctx *gin.Context) {
 		})
 		return
 	}
+	global.App.Log.Info("Register: create user success")
 	newUser := model2.User{
 		Name:      name,
 		Telephone: telephone,
 		Password:  string(hasedPassword),
 	}
 	db.Create(&newUser)
-
+	global.App.Log.Info("Register: insert into db")
 	//返回结果
 	ctx.JSON(http.StatusOK, gin.H{
 		"code":    200,
@@ -78,7 +80,7 @@ func Register(ctx *gin.Context) {
 }
 
 func QueryFirst(ctx *gin.Context) {
-	db := common.GetDB()
+	db := global.App.DB
 	var user model2.User
 	db.First(&user)
 	ctx.JSON(http.StatusUnprocessableEntity, gin.H{
@@ -91,7 +93,7 @@ func QueryFirst(ctx *gin.Context) {
 }
 
 func RawSQL(ctx *gin.Context) {
-	db := common.GetDB()
+	db := global.App.DB
 	var requestBody model2.RequestBody
 	if err := ctx.ShouldBindJSON(&requestBody); err != nil {
 		panic("RawSQL: ctx.ShouldBindJSON failed\n")
@@ -118,7 +120,7 @@ func RawSQL(ctx *gin.Context) {
 
 func Login(ctx *gin.Context) {
 
-	db := common.GetDB()
+	db := global.App.DB
 
 	//获取参数
 	//此处使用Bind()函数，可以处理不同格式的前端数据

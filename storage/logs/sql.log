@@ -1,0 +1,78 @@
+
+2023/09/16 00:07:38 D:/Godemo/databaseDemo/app/controller/userController.go:150 Error 1146 (42S02): Table 'webtest.users' doesn't exist
+[0.508ms] [rows:0] SELECT * FROM `users` WHERE telephone = '11111111113' ORDER BY `users`.`id` LIMIT 1
+
+2023/09/16 00:07:41 D:/Godemo/databaseDemo/app/controller/userController.go:49 Error 1146 (42S02): Table 'webtest.users' doesn't exist
+[0.513ms] [rows:0] SELECT * FROM `users` WHERE telephone = '11111111112' ORDER BY `users`.`id` LIMIT 1
+
+2023/09/16 00:07:41 D:/Godemo/databaseDemo/app/controller/userController.go:73 Error 1146 (42S02): Table 'webtest.users' doesn't exist
+[1.005ms] [rows:0] INSERT INTO `users` (`created_at`,`updated_at`,`deleted_at`,`name`,`telephone`,`password`) VALUES ('2023-09-16 00:07:41.944','2023-09-16 00:07:41.944',NULL,'bbbd','11111111112','$2a$10$GZNFl3JaidW9gZJahXAd1.y5RBg7oELgYBTNWCcpqBe8nVnXSMnTi')
+
+2023/09/16 00:07:48 D:/Godemo/databaseDemo/app/controller/userController.go:49 Error 1146 (42S02): Table 'webtest.users' doesn't exist
+[0.506ms] [rows:0] SELECT * FROM `users` WHERE telephone = '11111111113' ORDER BY `users`.`id` LIMIT 1
+
+2023/09/16 00:07:48 D:/Godemo/databaseDemo/app/controller/userController.go:73 Error 1146 (42S02): Table 'webtest.users' doesn't exist
+[0.000ms] [rows:0] INSERT INTO `users` (`created_at`,`updated_at`,`deleted_at`,`name`,`telephone`,`password`) VALUES ('2023-09-16 00:07:48.905','2023-09-16 00:07:48.905',NULL,'bbb','11111111113','$2a$10$TkKxhIoOmqJhogq.m9j26unSCUuc7Auc1HO4dlVDxfwQoP.ef7CxS')
+
+2023/09/16 00:07:52 D:/Godemo/databaseDemo/app/controller/userController.go:49 Error 1146 (42S02): Table 'webtest.users' doesn't exist
+[0.000ms] [rows:0] SELECT * FROM `users` WHERE telephone = '11111111111' ORDER BY `users`.`id` LIMIT 1
+
+2023/09/16 00:07:52 D:/Godemo/databaseDemo/app/controller/userController.go:73 Error 1146 (42S02): Table 'webtest.users' doesn't exist
+[1.003ms] [rows:0] INSERT INTO `users` (`created_at`,`updated_at`,`deleted_at`,`name`,`telephone`,`password`) VALUES ('2023-09-16 00:07:52.453','2023-09-16 00:07:52.453',NULL,'bba','11111111111','$2a$10$aYTrp7b1.rZGYMshfmHbeueHXbqqKasnStVFEBNfrLeLQPd.MFb9y')
+
+2023/09/16 00:07:54 D:/Godemo/databaseDemo/app/controller/userController.go:150 Error 1146 (42S02): Table 'webtest.users' doesn't exist
+[0.321ms] [rows:0] SELECT * FROM `users` WHERE telephone = '11111111113' ORDER BY `users`.`id` LIMIT 1
+
+2023/09/16 00:07:56 D:/Godemo/databaseDemo/app/controller/userController.go:150 Error 1146 (42S02): Table 'webtest.users' doesn't exist
+[0.863ms] [rows:0] SELECT * FROM `users` WHERE telephone = '11111111112' ORDER BY `users`.`id` LIMIT 1
+
+2023/09/16 00:08:11 D:/Godemo/databaseDemo/app/controller/userController.go:150 Error 1146 (42S02): Table 'webtest.users' doesn't exist
+[0.714ms] [rows:0] SELECT * FROM `users` WHERE telephone = '11111111111' ORDER BY `users`.`id` LIMIT 1
+
+2023/09/16 00:15:48 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.000ms] [rows:-] SELECT DATABASE()
+
+2023/09/16 00:15:48 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[1.812ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/09/16 00:15:48 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.544ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/09/16 00:15:48 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[10.830ms] [rows:0] CREATE TABLE `users` (`id` bigint unsigned AUTO_INCREMENT,`created_at` datetime NULL,`updated_at` datetime NULL,`deleted_at` datetime NULL,`name` varchar(191) NOT NULL,`telephone` varchar(191) NOT NULL UNIQUE,`password` varchar(255) NOT NULL,PRIMARY KEY (`id`))
+
+2023/09/16 00:15:58 D:/Godemo/databaseDemo/app/controller/userController.go:49 record not found
+[2.087ms] [rows:0] SELECT * FROM `users` WHERE telephone = '11111111111' ORDER BY `users`.`id` LIMIT 1
+
+2023/09/16 00:15:58 D:/Godemo/databaseDemo/app/controller/userController.go:73
+[4.609ms] [rows:1] INSERT INTO `users` (`created_at`,`updated_at`,`deleted_at`,`name`,`telephone`,`password`) VALUES ('2023-09-16 00:15:58.84','2023-09-16 00:15:58.84',NULL,'bba','11111111111','$2a$10$3imrGFyDTLrFFnTZDZiv0.Le4q2YNOnzJqVGjKDSZXNfnQuvZO74O')
+
+2023/09/16 00:16:07 D:/Godemo/databaseDemo/app/controller/userController.go:49 record not found
+[0.627ms] [rows:0] SELECT * FROM `users` WHERE telephone = '11111111112' ORDER BY `users`.`id` LIMIT 1
+
+2023/09/16 00:16:07 D:/Godemo/databaseDemo/app/controller/userController.go:73
+[2.349ms] [rows:1] INSERT INTO `users` (`created_at`,`updated_at`,`deleted_at`,`name`,`telephone`,`password`) VALUES ('2023-09-16 00:16:07.493','2023-09-16 00:16:07.493',NULL,'bba','11111111112','$2a$10$khEtWE4FLiXNf65XxYKfL.9JBJ5uIq4.HLQ8wak5KsKND0IWz398a')
+
+2023/09/16 00:16:12 D:/Godemo/databaseDemo/app/controller/userController.go:49 record not found
+[0.657ms] [rows:0] SELECT * FROM `users` WHERE telephone = '11111111113' ORDER BY `users`.`id` LIMIT 1
+
+2023/09/16 00:16:12 D:/Godemo/databaseDemo/app/controller/userController.go:73
+[3.000ms] [rows:1] INSERT INTO `users` (`created_at`,`updated_at`,`deleted_at`,`name`,`telephone`,`password`) VALUES ('2023-09-16 00:16:12.458','2023-09-16 00:16:12.458',NULL,'bbd','11111111113','$2a$10$KlpfM.j3YDW7kPJnQspHDOoU7nVyHyNqfSpGqIUYnnpwaxTVJwplO')
+
+2023/09/16 00:16:14 D:/Godemo/databaseDemo/app/controller/userController.go:150
+[1.424ms] [rows:1] SELECT * FROM `users` WHERE telephone = '11111111111' ORDER BY `users`.`id` LIMIT 1
+
+2023/09/16 00:16:19 D:/Godemo/databaseDemo/app/controller/userController.go:150
+[1.475ms] [rows:1] SELECT * FROM `users` WHERE telephone = '11111111112' ORDER BY `users`.`id` LIMIT 1
+
+2023/09/16 00:16:21 D:/Godemo/databaseDemo/app/controller/userController.go:150
+[0.900ms] [rows:1] SELECT * FROM `users` WHERE telephone = '11111111113' ORDER BY `users`.`id` LIMIT 1
+
+2023/09/16 00:16:24 D:/Godemo/databaseDemo/app/controller/userController.go:85
+[0.866ms] [rows:1] SELECT * FROM `users` ORDER BY `users`.`id` LIMIT 1
+
+2023/09/16 00:16:28 D:/Godemo/databaseDemo/app/controller/userController.go:116
+[0.726ms] [rows:3] select name from users;
+
+2023/09/16 00:16:39 D:/Godemo/databaseDemo/app/controller/userController.go:116
+[0.583ms] [rows:3] select * from users;
