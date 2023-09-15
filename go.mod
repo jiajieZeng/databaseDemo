@@ -1,4 +1,4 @@
-module webdemo
+module databaseDemo
 
 go 1.18
 
