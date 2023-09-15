@@ -3,7 +3,6 @@ package main
 import (
 	"databaseDemo/bootstrap"
 	"databaseDemo/global"
-	"github.com/gin-gonic/gin"
 )
 
 func main() {
@@ -28,12 +27,13 @@ func main() {
 	}()
 
 	// 创建一个默认的路由引擎
-	r := gin.Default()
+	//r := gin.Default()
 
 	// 启动路由
-	CollectRoutes(r)
-
+	//CollectRoutes(r)
 	// 在9090端口启动服务
-	//panic(r.Run(":9090"))
-	panic(r.Run(":" + global.App.Config.App.Port))
+	//panic(r.Run(":" + global.App.Config.App.Port))
+
+	// 启动服务器
+	bootstrap.RunServer()
 }
