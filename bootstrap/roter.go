@@ -3,6 +3,7 @@ package bootstrap
 import (
 	"context"
 	"databaseDemo/global"
+	"databaseDemo/middleware"
 	"databaseDemo/routes"
 	"github.com/gin-gonic/gin"
 	"log"
@@ -37,7 +38,7 @@ func RunServer() {
 		Addr:    ":" + global.App.Config.App.Port,
 		Handler: r,
 	}
-
+	r.Use(middleware.Cors())
 	go func() {
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 			log.Fatalf("listen: %s\n", err)
