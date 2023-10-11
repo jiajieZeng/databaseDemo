@@ -4,9 +4,9 @@ import "github.com/jinzhu/gorm"
 
 type User struct {
 	gorm.Model
-	Name      string `gorm:"varchar(20);not null"`
-	Telephone string `gorm:"varchar(20);not null;unique"`
-	Password  string `gorm:"size:255;not null"`
+	Name      string `json:"name" gorm:"varchar(20);not null"`
+	Telephone string `json:"telephone" gorm:"varchar(20);not null;unique"`
+	Password  string `json:"password" gorm:"size:255;not null"`
 }
 
 type UserResult struct {

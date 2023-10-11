@@ -157,3 +157,120 @@
 
 2023/09/16 00:39:15 D:/Godemo/databaseDemo/app/controller/userController.go:116
 [0.614ms] [rows:4] select * from users;
+
+2023/09/16 10:27:18 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.506ms] [rows:-] SELECT DATABASE()
+
+2023/09/16 10:27:18 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[1.617ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/09/16 10:27:18 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.512ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/09/16 10:27:18 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.000ms] [rows:-] SELECT DATABASE()
+
+2023/09/16 10:27:18 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.713ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/09/16 10:27:18 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.510ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/09/16 10:27:18 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.509ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/09/16 10:37:55 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.504ms] [rows:-] SELECT DATABASE()
+
+2023/09/16 10:37:55 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.663ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/09/16 10:37:55 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.706ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/09/16 10:37:55 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.000ms] [rows:-] SELECT DATABASE()
+
+2023/09/16 10:37:55 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.524ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/09/16 10:37:55 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.544ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/09/16 10:37:55 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.509ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/09/16 10:38:13 D:/Godemo/databaseDemo/app/controller/userController.go:49
+[1.207ms] [rows:1] SELECT * FROM `users` WHERE telephone = '11111111114' ORDER BY `users`.`id` LIMIT 1
+
+2023/09/16 10:38:20 D:/Godemo/databaseDemo/app/controller/userController.go:150
+[1.387ms] [rows:1] SELECT * FROM `users` WHERE telephone = '11111111113' ORDER BY `users`.`id` LIMIT 1
+
+2023/09/16 10:38:28 D:/Godemo/databaseDemo/app/controller/userController.go:85
+[0.124ms] [rows:1] SELECT * FROM `users` ORDER BY `users`.`id` LIMIT 1
+
+2023/09/16 10:38:33 D:/Godemo/databaseDemo/app/controller/userController.go:116
+[0.313ms] [rows:4] select * from users;
+
+2023/09/17 23:04:03 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.000ms] [rows:-] SELECT DATABASE()
+
+2023/09/17 23:04:03 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[1.311ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/09/17 23:04:03 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.504ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/09/17 23:04:03 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.000ms] [rows:-] SELECT DATABASE()
+
+2023/09/17 23:04:03 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.672ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/09/17 23:04:03 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[1.510ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/09/17 23:04:03 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[1.044ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/09/17 23:05:44 D:/Godemo/databaseDemo/app/controller/userController.go:49 record not found
+[0.533ms] [rows:0] SELECT * FROM `users` WHERE telephone = '11111111115' ORDER BY `users`.`id` LIMIT 1
+
+2023/09/17 23:05:45 D:/Godemo/databaseDemo/app/controller/userController.go:73
+[3.970ms] [rows:1] INSERT INTO `users` (`created_at`,`updated_at`,`deleted_at`,`name`,`telephone`,`password`) VALUES ('2023-09-17 23:05:45.009','2023-09-17 23:05:45.009',NULL,'bbf','11111111115','$2a$10$iPf5sDR61XVKDzC33sE0LOczdpJzUmyvdjMgbS037nBmL8mTFGU4e')
+
+2023/09/17 23:05:59 D:/Godemo/databaseDemo/app/controller/userController.go:85
+[0.789ms] [rows:1] SELECT * FROM `users` ORDER BY `users`.`id` LIMIT 1
+
+2023/09/17 23:06:18 D:/Godemo/databaseDemo/app/controller/userController.go:116
+[0.885ms] [rows:5] select * from users;
+
+2023/09/17 23:06:33 D:/Godemo/databaseDemo/app/controller/userController.go:116
+[0.182ms] [rows:5] select name from users;
+
+2023/09/17 23:07:03 D:/Godemo/databaseDemo/app/controller/userController.go:116
+[0.412ms] [rows:5] select telephone from users;
+
+2023/09/17 23:08:17 D:/Godemo/databaseDemo/app/controller/userController.go:116
+[0.000ms] [rows:5] select telephone from users;
+
+2023/09/17 23:14:24 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.000ms] [rows:-] SELECT DATABASE()
+
+2023/09/17 23:14:24 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.689ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/09/17 23:14:24 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.000ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/09/17 23:14:24 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.503ms] [rows:-] SELECT DATABASE()
+
+2023/09/17 23:14:24 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.510ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/09/17 23:14:24 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[0.556ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/09/17 23:14:24 D:/Godemo/databaseDemo/bootstrap/db.go:107
+[1.410ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION

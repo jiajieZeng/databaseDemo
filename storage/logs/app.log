@@ -40,3 +40,14 @@
 [2023-09-16 00:38:59.382]	local.info	controller/userController.go:57	Register: check exist success
 [2023-09-16 00:38:59.469]	local.info	controller/userController.go:67	Register: create user success
 [2023-09-16 00:38:59.473]	local.info	controller/userController.go:74	Register: insert into db
+[2023-09-16 10:27:18.140]	local.info	databaseDemo/main.go:14	log init success!
+[2023-09-16 10:37:55.711]	local.info	databaseDemo/main.go:14	log init success!
+[2023-09-16 10:38:13.710]	local.info	controller/userController.go:23	Register: get info success  bbe 11111111114 123456
+[2023-09-16 10:38:13.710]	local.info	controller/userController.go:46	Register: check success
+[2023-09-17 23:04:03.808]	local.info	databaseDemo/main.go:14	log init success!
+[2023-09-17 23:05:44.943]	local.info	controller/userController.go:23	Register: get info success  bbf 11111111115 123456
+[2023-09-17 23:05:44.943]	local.info	controller/userController.go:46	Register: check success
+[2023-09-17 23:05:44.944]	local.info	controller/userController.go:57	Register: check exist success
+[2023-09-17 23:05:45.008]	local.info	controller/userController.go:67	Register: create user success
+[2023-09-17 23:05:45.012]	local.info	controller/userController.go:74	Register: insert into db
+[2023-09-17 23:14:24.136]	local.info	databaseDemo/main.go:14	log init success!
