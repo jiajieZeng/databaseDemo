@@ -16,7 +16,7 @@ func CollectRoutes(r *gin.Engine) *gin.Engine {
 	r.GET("/queryfirst", controller.QueryFirst)
 
 	// db.Raw
-	r.GET("/raw", controller.RawSQL)
+	r.POST("/raw", controller.RawSQL)
 	return r
 
 }

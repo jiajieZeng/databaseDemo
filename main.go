@@ -19,6 +19,7 @@ func main() {
 	//defer db.Close()
 
 	global.App.DB = bootstrap.InitializeDB()
+	global.App.RDB = bootstrap.InitializeDBSQL()
 	defer func() {
 		if global.App.DB != nil {
 			db, _ := global.App.DB.DB()

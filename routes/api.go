@@ -27,7 +27,7 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 	router.GET("/queryfirst", controller.QueryFirst)
 
 	// db.Raw
-	router.GET("/raw", controller.RawSQL)
+	router.POST("/raw", controller.RawSQL)
 
 }
 

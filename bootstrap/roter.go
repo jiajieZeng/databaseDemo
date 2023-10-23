@@ -16,7 +16,7 @@ import (
 
 func setupRouter() *gin.Engine {
 	router := gin.Default()
-
+	router.Use(middleware.Cors());
 	// 前端项目静态资源
 	router.StaticFile("/", "./static/dist/index.html")
 	router.Static("/assets", "./static/dist/assets")
@@ -38,7 +38,7 @@ func RunServer() {
 		Addr:    ":" + global.App.Config.App.Port,
 		Handler: r,
 	}
-	r.Use(middleware.Cors())
+
 	go func() {
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 			log.Fatalf("listen: %s\n", err)

@@ -52,3 +52,152 @@
 [2023-09-17 23:05:45.012]	local.info	controller/userController.go:74	Register: insert into db
 [2023-09-17 23:14:24.136]	local.info	databaseDemo/main.go:14	log init success!
 [2023-10-11 19:34:24.975]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-11 20:06:52.797]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-11 20:06:52.798]	local.error	bootstrap/db.go:49	mysql connect failed, err:	{"err": "Error 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)"}
+[2023-10-11 20:10:21.575]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-11 20:14:50.934]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 20:14:50.934]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 20:15:27.842]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 20:15:27.843]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 20:15:57.792]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 20:15:57.792]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 20:17:00.894]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 20:17:00.894]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 21:14:16.006]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-11 21:14:41.520]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 21:14:41.520]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 21:14:59.465]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 21:14:59.465]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 21:20:35.322]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 21:20:35.322]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 21:20:36.314]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 21:20:36.314]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 21:24:39.527]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 21:24:39.527]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 21:25:12.016]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 21:25:12.016]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 21:33:10.066]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 21:33:10.066]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 21:33:11.581]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 21:33:11.581]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 21:33:17.588]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 21:33:17.589]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 21:38:21.216]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 21:38:21.216]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 21:39:12.593]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 21:39:12.593]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 21:57:15.671]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 21:57:15.671]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 22:01:38.553]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 22:01:38.553]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 22:01:42.405]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 22:01:42.405]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 22:03:42.523]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 22:03:42.523]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 22:05:54.579]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-11 22:06:01.693]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-11 22:06:08.272]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 22:06:08.272]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 22:06:18.121]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 22:06:18.121]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 22:07:50.950]	local.info	controller/userController.go:23	Register: get info success  aa 12345678911 123456
+[2023-10-11 22:07:50.950]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 22:07:58.387]	local.info	controller/userController.go:23	Register: get info success  bb 12345678911 123456
+[2023-10-11 22:07:58.387]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 22:09:25.044]	local.info	controller/userController.go:23	Register: get info success  bb 11111111111 145789
+[2023-10-11 22:09:25.044]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 22:09:45.214]	local.info	controller/userController.go:23	Register: get info success  bb 12345678911 123456
+[2023-10-11 22:09:45.214]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 22:11:53.737]	local.info	controller/userController.go:23	Register: get info success  bb 11111111111 145789
+[2023-10-11 22:11:53.737]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 22:12:28.877]	local.info	controller/userController.go:23	Register: get info success  bb 11111111111 145789
+[2023-10-11 22:12:28.877]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 22:13:29.787]	local.info	controller/userController.go:23	Register: get info success  bb 11111111111 145789
+[2023-10-11 22:13:29.787]	local.info	controller/userController.go:46	Register: check success
+[2023-10-11 22:20:18.469]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 20:23:48.613]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 20:54:38.834]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 21:10:34.106]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 21:10:52.072]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 21:11:11.682]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 21:11:49.786]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 21:38:01.358]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 21:38:25.220]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 21:39:02.206]	local.info	controller/userController.go:105	Register: get info success 
+[2023-10-12 21:39:53.636]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 21:44:54.840]	local.info	controller/userController.go:105	Register: get info success 
+[2023-10-12 21:45:14.378]	local.info	controller/userController.go:23	Register: get info success  bbdd 11111111111 123456
+[2023-10-12 21:45:14.378]	local.info	controller/userController.go:46	Register: check success
+[2023-10-12 21:45:23.627]	local.info	controller/userController.go:105	Register: get info success 
+[2023-10-12 21:46:54.568]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 22:11:21.154]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 22:11:25.244]	local.info	controller/userController.go:102	Register: get info success 
+[2023-10-12 22:11:27.039]	local.info	controller/userController.go:102	Register: get info success 
+[2023-10-12 22:11:28.196]	local.info	controller/userController.go:102	Register: get info success 
+[2023-10-12 22:11:31.605]	local.info	controller/userController.go:102	Register: get info success 
+[2023-10-12 22:11:32.938]	local.info	controller/userController.go:102	Register: get info success 
+[2023-10-12 22:11:33.716]	local.info	controller/userController.go:102	Register: get info success 
+[2023-10-12 22:11:34.279]	local.info	controller/userController.go:102	Register: get info success 
+[2023-10-12 22:16:31.954]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 22:17:49.391]	local.info	controller/userController.go:104	Register: get info success 
+[2023-10-12 22:18:52.720]	local.info	controller/userController.go:104	Register: get info success 
+[2023-10-12 22:19:03.871]	local.info	controller/userController.go:104	Register: get info success 
+[2023-10-12 22:19:56.095]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 22:20:01.600]	local.info	controller/userController.go:103	Register: get info success 
+[2023-10-12 22:20:47.956]	local.info	controller/userController.go:103	Register: get info success 
+[2023-10-12 22:21:51.332]	local.info	controller/userController.go:103	Register: get info success 
+[2023-10-12 22:22:50.935]	local.info	controller/userController.go:23	Register: get info success    
+[2023-10-12 22:22:55.646]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 22:22:58.430]	local.info	controller/userController.go:103	Register: get info success 
+[2023-10-12 22:22:59.233]	local.info	controller/userController.go:103	Register: get info success 
+[2023-10-12 22:22:59.880]	local.info	controller/userController.go:103	Register: get info success 
+[2023-10-12 22:25:26.396]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 22:27:58.598]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 22:28:44.222]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 22:30:03.401]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 22:30:50.879]	local.info	controller/userController.go:23	Register: get info success  bbdd 11111111111 123456
+[2023-10-12 22:30:50.879]	local.info	controller/userController.go:46	Register: check success
+[2023-10-12 22:30:55.546]	local.info	controller/userController.go:23	Register: get info success  bbdd 11111113111 123456
+[2023-10-12 22:30:55.546]	local.info	controller/userController.go:46	Register: check success
+[2023-10-12 22:30:55.546]	local.info	controller/userController.go:57	Register: check exist success
+[2023-10-12 22:30:55.617]	local.info	controller/userController.go:67	Register: create user success
+[2023-10-12 22:30:55.621]	local.info	controller/userController.go:74	Register: insert into db
+[2023-10-12 22:33:47.497]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 22:35:14.689]	local.info	controller/userController.go:103	Register: get info success 
+[2023-10-12 22:36:13.404]	local.info	controller/userController.go:103	Register: get info success 
+[2023-10-12 22:36:15.954]	local.info	controller/userController.go:103	Register: get info success 
+[2023-10-12 22:37:45.579]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 22:38:00.388]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 22:39:24.504]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 22:39:58.636]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 22:40:01.226]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 22:41:33.687]	local.info	controller/userController.go:103	Register: get info success 
+[2023-10-12 22:42:36.100]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 22:43:03.929]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 22:48:54.729]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 22:48:57.532]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 22:49:07.836]	local.info	controller/userController.go:103	Register: get info success 
+[2023-10-12 22:49:14.315]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 22:57:27.966]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 22:57:40.622]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 22:58:57.159]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 23:03:11.004]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-12 23:03:16.154]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 23:03:27.133]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 23:03:42.269]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 23:07:07.758]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 23:17:35.214]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 23:20:59.079]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 23:21:34.100]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 23:21:54.388]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 23:25:28.487]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 23:28:45.247]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 23:30:16.652]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 23:35:19.144]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 23:38:07.691]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-12 23:40:56.928]	local.info	controller/userController.go:103	Register: get info success select * from users;
+[2023-10-22 15:21:31.700]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-22 15:22:41.479]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-22 15:34:02.705]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-22 15:36:44.061]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-23 23:36:21.518]	local.info	databaseDemo/main.go:14	log init success!

@@ -1,6 +1,7 @@
 package bootstrap
 
 import (
+	"database/sql"
 	"databaseDemo/app/model"
 	"databaseDemo/global"
 	"go.uber.org/zap"
@@ -53,6 +54,23 @@ func initMySqlGorm() *gorm.DB {
 		sqlDB.SetMaxIdleConns(dbConfig.MaxIdleConns)
 		sqlDB.SetMaxOpenConns(dbConfig.MaxOpenConns)
 		initMySqlTables(db)
+		return db
+	}
+}
+
+
+func InitializeDBSQL() *sql.DB {
+	dbConfig := global.App.Config.Database
+	dsn := dbConfig.UserName + ":" + dbConfig.Password + "@tcp(" + dbConfig.Host + ":" + strconv.Itoa(dbConfig.Port) + ")/" +
+		dbConfig.Database + "?charset=" + dbConfig.Charset + "&parseTime=True&loc=Local"
+	db, err := sql.Open("mysql", dsn)
+	if err != nil {
+		global.App.Log.Error("mysql connect failed, err:", zap.Any("err", err))
+		return nil
+	} else {
+		sqlDB := db
+		sqlDB.SetMaxIdleConns(dbConfig.MaxIdleConns)
+		sqlDB.SetMaxOpenConns(dbConfig.MaxOpenConns)
 		return db
 	}
 }

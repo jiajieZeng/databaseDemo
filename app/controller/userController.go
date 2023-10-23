@@ -6,7 +6,9 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
+	"github.com/goccy/go-json"
 	"net/http"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 func Register(ctx *gin.Context) {
@@ -89,33 +91,98 @@ func QueryFirst(ctx *gin.Context) {
 		"tlelephone": user.Telephone,
 		"password":   user.Password,
 	})
-
 }
 
 func RawSQL(ctx *gin.Context) {
-	db := global.App.DB
+	//db := global.App.DB
+	//var requestBody model2.RequestBody
+	//if err := ctx.ShouldBindJSON(&requestBody); err != nil {
+	//	panic("RawSQL: ctx.ShouldBindJSON failed\n")
+	//}
+	//// var result Result
+	//// db.Raw("SELECT id, name, age FROM users WHERE id = ?", 3).Scan(&result)
+	//sql := requestBody.SQL
+	//// var result model.UserResult
+	//// db.Raw(sql).Scan(&result)
+	//// ctx.JSON(http.StatusUnprocessableEntity, gin.H{
+	//// 	"id":         result.ID,
+	//// 	"created_at": result.Created_at,
+	//// 	"deleted_at": result.Deleted_at,
+	//// 	"update_at":  result.Updated_at,
+	//// 	"name":       result.Name,
+	//// 	"telephone":  result.Telephone,
+	//// 	"password":   result.Password,
+	//// })
+	//var users []model2.UserResult
+	//db.Raw(sql).Scan(&users)
+	//ctx.JSON(http.StatusOK, users)
+
+	db := global.App.RDB
 	var requestBody model2.RequestBody
 	if err := ctx.ShouldBindJSON(&requestBody); err != nil {
 		panic("RawSQL: ctx.ShouldBindJSON failed\n")
 	}
-	// var result Result
-	// db.Raw("SELECT id, name, age FROM users WHERE id = ?", 3).Scan(&result)
 	sql := requestBody.SQL
-	// var result model.UserResult
-	// db.Raw(sql).Scan(&result)
-	// ctx.JSON(http.StatusUnprocessableEntity, gin.H{
-	// 	"id":         result.ID,
-	// 	"created_at": result.Created_at,
-	// 	"deleted_at": result.Deleted_at,
-	// 	"update_at":  result.Updated_at,
-	// 	"name":       result.Name,
-	// 	"telephone":  result.Telephone,
-	// 	"password":   result.Password,
-	// })
-	var users []model2.UserResult
-	db.Raw(sql).Scan(&users)
-	ctx.JSON(http.StatusOK, users)
+	if sql[0] == 'I' || sql[0] == 'i' {
+		if _, err := db.Exec(sql); err != nil {
+			ctx.JSON(http.StatusInternalServerError, gin.H{"status": err.Error()})
+			return
+		}
+		ctx.JSON(http.StatusOK, gin.H{"status": "OK"})
+		return
+	} else if sql[0] == 'C' || sql[0] == 'c' {
+		if _, err := db.Exec(sql); err != nil {
+			ctx.JSON(http.StatusInternalServerError, gin.H{"status": err.Error()})
+			return
+		}
+		ctx.JSON(http.StatusOK, gin.H{"status": "OK"})
+		return
+	}
+	rows, err := db.Query(sql)
+	if err != nil {
+		panic(err)
+	}
+	defer rows.Close()
+	columns, err := rows.Columns()
+	if err != nil {
+		panic(err)
+	}
 
+	values := make([]interface{}, len(columns))
+	for i := range values {
+		values[i] = new(interface{})
+	}
+	var result []map[string]string
+	for rows.Next() {
+		err := rows.Scan(values...)
+		if err != nil {
+			panic(err)
+		}
+
+		// 打印查询结果及其字段名
+		rowData := make(map[string]string)
+		for i, v := range values {
+			fmt.Printf("%s: ", columns[i])
+			s, ok := (*v.(*interface{})).([]byte)
+			rowData[columns[i]] = string(s)
+			if !ok {
+				// 处理类型断言失败的情况
+				continue
+			}
+			for _, val := range s {
+				fmt.Printf("%c", val)
+			}
+			fmt.Println()
+		}
+		result = append(result, rowData)
+	}
+	jsonData, err := json.Marshal(result)
+	if err != nil {
+		panic(err)
+	}
+	ctx.Header("Content-Type", "application/json")
+	ctx.Status(http.StatusOK)
+	ctx.Writer.Write([]byte(jsonData))
 }
 
 func Login(ctx *gin.Context) {
