@@ -7,6 +7,7 @@ import (
 	"gorm.io/gorm"
 	_ "github.com/go-sql-driver/mysql"
 	"database/sql"
+	"github.com/go-redis/redis/v9"
 )
 
 type Application struct {
@@ -15,6 +16,7 @@ type Application struct {
 	Log         *zap.Logger
 	DB          *gorm.DB
 	RDB         *sql.DB
+	Redis 		*redis.Client
 }
 
 var App = new(Application)

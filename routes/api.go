@@ -24,10 +24,14 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 	router.POST("/login", controller.Login)
 
 	// db.First
-	router.GET("/queryfirst", controller.QueryFirst)
+	router.POST("/queryfirst", controller.QueryFirst)
 
 	// db.Raw
 	router.POST("/raw", controller.RawSQL)
+
+	router.POST("/checkin", controller.CheckIn)
+
+	router.POST("/hash", controller.HashData)
 
 }
 

@@ -20,6 +20,7 @@ func main() {
 
 	global.App.DB = bootstrap.InitializeDB()
 	global.App.RDB = bootstrap.InitializeDBSQL()
+	global.App.Redis = bootstrap.InitializeRedis();
 	defer func() {
 		if global.App.DB != nil {
 			db, _ := global.App.DB.DB()
