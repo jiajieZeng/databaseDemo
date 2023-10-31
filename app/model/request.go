@@ -5,13 +5,8 @@ type RequestBody struct {
 } 
 
 type RedisRequestBody struct {
-	ID int64 `json:"ID"`
+	ID string `json:"ID"`
 	Command string `json:"Command"`
-}
-
-type ZsetBody struct {
 	ItemNam string `json:"name"`
-	Score   float64	`json:"score"`
-	Command string `json:"Command"`
-	offset int64 `json:"offset"`
+	Score   string	`json:"score"`
 }

@@ -33,5 +33,7 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 
 	router.POST("/hash", controller.HashData)
 
+	router.POST("/Zset", controller.Zset)
+
 }
 

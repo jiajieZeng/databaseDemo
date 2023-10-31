@@ -25,21 +25,59 @@ func HashData(ctx *gin.Context) {
 	if err := ctx.ShouldBindJSON(&requestBody); err != nil {
 		panic("CheckIn: ctx.ShouldBindJSON failed\n")
 	}
-	userID := requestBody.ID
 	command := requestBody.Command
-
 	switch command {
 	case "init":
 		Ex06InitUserCounter(ctx)
 	case "get":
+		id := requestBody.ID
+		userID, err := strconv.ParseInt(id, 10, 64)
+		if err != nil {
+			ctx.JSON(http.StatusInternalServerError, gin.H{
+				"status": err.Error(),
+			})
+			return
+		}
 		GetUserCounter(ctx, userID)
 	case "incr_like":
+		id := requestBody.ID
+		userID, err := strconv.ParseInt(id, 10, 64)
+		if err != nil {
+			ctx.JSON(http.StatusInternalServerError, gin.H{
+				"status": err.Error(),
+			})
+			return
+		}
 		IncrByUserLike(ctx, userID)
 	case "incr_collect":
+		id := requestBody.ID
+		userID, err := strconv.ParseInt(id, 10, 64)
+		if err != nil {
+			ctx.JSON(http.StatusInternalServerError, gin.H{
+				"status": err.Error(),
+			})
+			return
+		}
 		IncrByUserCollect(ctx, userID)
 	case "decr_like":
+		id := requestBody.ID
+		userID, err := strconv.ParseInt(id, 10, 64)
+		if err != nil {
+			ctx.JSON(http.StatusInternalServerError, gin.H{
+				"status": err.Error(),
+			})
+			return
+		}
 		DecrByUserLike(ctx, userID)
 	case "decr_collect":
+		id := requestBody.ID
+		userID, err := strconv.ParseInt(id, 10, 64)
+		if err != nil {
+			ctx.JSON(http.StatusInternalServerError, gin.H{
+				"status": err.Error(),
+			})
+			return
+		}
 		DecrByUserCollect(ctx, userID)
 	}
 }
@@ -187,7 +225,16 @@ func Ex06InitUserCounter(ctx *gin.Context) {
 			return
 		}
 	}
-	jsonData, err := json.Marshal(userCounters)
+	sData := []map[string]interface{}{
+		{"userID": "114514", "got_digg_count": "10693", "got_view_count": "223", "followee_count": "76", "follower_count": "995", "follow_collect_set_count": "575", "subscribe_tag_count": "95"},
+		{"userID": "1111", "got_digg_count": "19", "got_view_count": "2238438", "followee_count": "1716", "follower_count": "98895", "follow_collect_set_count": "75", "subscribe_tag_count": "5"},
+		{"userID": "2222", "got_digg_count": "1238", "got_view_count": "22338", "followee_count": "1176", "follower_count": "85", "follow_collect_set_count": "788", "subscribe_tag_count": "99"},
+		{"userID": "3333", "got_digg_count": "1238", "got_view_count": "38438", "followee_count": "1786", "follower_count": "779895", "follow_collect_set_count": "878", "subscribe_tag_count": "18"},
+		{"userID": "4444", "got_digg_count": "19", "got_view_count": "3438", "followee_count": "18", "follower_count": "1000", "follow_collect_set_count": "10", "subscribe_tag_count": "114"},
+		{"userID": "5555", "got_digg_count": "10693", "got_view_count": "18438", "followee_count": "188", "follower_count": "11495", "follow_collect_set_count": "20", "subscribe_tag_count": "541"},
+		{"userID": "1919810", "got_digg_count": "10693", "got_view_count": "84138", "followee_count": "0", "follower_count": "2547", "follow_collect_set_count": "30", "subscribe_tag_count": "810"},
+	}
+	jsonData, err := json.Marshal(sData)
 	if err != nil {
 		panic(err)
 	}

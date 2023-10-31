@@ -213,3 +213,44 @@
 [2023-10-29 11:41:13.233]	local.info	databaseDemo/main.go:14	log init success!
 [2023-10-29 12:15:28.810]	local.info	databaseDemo/main.go:14	log init success!
 [2023-10-29 14:13:43.563]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 15:46:11.138]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 15:47:17.437]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 16:16:21.099]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 16:18:04.150]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 16:18:45.694]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 16:20:34.880]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 21:12:33.090]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 21:17:28.786]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 21:19:22.917]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 22:53:48.952]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 22:53:49.171]	local.error	bootstrap/redis.go:19	Redis connect ping failed, err:	{"err": "dial tcp 127.0.0.1:6379: connect: connection refused"}
+[2023-10-29 22:55:39.847]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 22:58:16.485]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 22:58:50.328]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 23:00:02.687]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 23:00:33.750]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 23:05:09.532]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 23:05:58.929]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 23:09:21.114]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-29 23:09:21.184]	local.error	bootstrap/redis.go:19	Redis connect ping failed, err:	{"err": "dial tcp 127.0.0.1:6379: connect: connection refused"}
+[2023-10-29 23:09:58.513]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 10:31:22.415]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 10:38:39.356]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 10:42:27.284]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 11:11:44.753]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 11:12:29.405]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 11:24:12.341]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 11:29:35.514]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 11:35:54.510]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 11:37:50.037]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 11:38:02.874]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 11:38:49.245]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 11:56:00.055]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 12:45:30.321]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 12:45:51.847]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 13:02:37.936]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 13:02:38.027]	local.error	bootstrap/redis.go:19	Redis connect ping failed, err:	{"err": "dial tcp 127.0.0.1:6379: connect: connection refused"}
+[2023-10-30 13:03:20.790]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 13:06:51.642]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 13:19:29.537]	local.info	databaseDemo/main.go:14	log init success!
+[2023-10-30 13:22:50.887]	local.info	databaseDemo/main.go:14	log init success!
