@@ -2,19 +2,22 @@ package controller
 
 import (
 	"context"
+	model2 "databaseDemo/app/model"
+	"databaseDemo/global"
 	"fmt"
+	"net/http"
 	"strconv"
 	"time"
-	model2 "databaseDemo/app/model"
+
 	"github.com/gin-gonic/gin"
-	"net/http"
-	"databaseDemo/global"
 	"github.com/gin-gonic/gin/binding"
+	"go.uber.org/zap"
 )
 
 var ctx = context.Background()
 
 const continuesCheckKey = "cc_uid_%s"
+const bitmapKey = "%s_b"
 
 func CheckIn(ctx *gin.Context) {
 	var requestBody model2.RedisRequestBody
@@ -24,31 +27,24 @@ func CheckIn(ctx *gin.Context) {
 		ctx.JSON(http.StatusInternalServerError, gin.H{
 			"status": err.Error(),
 		})
-		return;
+		return
 	}
 	userID := requestBody.ID
 	key := fmt.Sprintf(continuesCheckKey, userID)
-
-	// 锁一天
-	now := time.Now()
-	expAt := beginningOfDay().Add(48 * time.Hour)
-	secondsUnitlTomorrow := int(expAt.Sub(now).Seconds())
-	fmt.Println(time.Duration(secondsUnitlTomorrow * 1000) * time.Millisecond)
-	acquired, err := RedisClient.SetNX(ctx, key, 0, time.Duration(secondsUnitlTomorrow * 1000) * time.Millisecond).Result()
+	bKey := fmt.Sprintf(bitmapKey, key)
+	flag, err := checkSign(ctx, bKey)
 	if err != nil {
-		// fmt.Errorf("用户[%d]连续签到失败", userID)
 		ctx.JSON(http.StatusInternalServerError, gin.H{
-			"status": fmt.Sprintf("用户[%s]连续签到失败", userID),
+			"status": err.Error(),
 		})
 		return
-	} 
-	if  !acquired {
+	}
+	if flag == 1 {
 		ctx.JSON(http.StatusOK, gin.H{
-			"status": fmt.Sprintf("用户[%s]今日已签到, 过期时间:%s", userID, expAt.Format("2006-01-02 15:04:05")),
-		})		
+			"status": fmt.Sprintf("用户[%s]今天已经签过到了", userID),
+		})
 		return
 	}
-
 	// 1. 连续签到数+1
 	err = RedisClient.Incr(ctx, key).Err()
 	if err != nil {
@@ -56,8 +52,10 @@ func CheckIn(ctx *gin.Context) {
 		ctx.JSON(http.StatusInternalServerError, gin.H{
 			"status": fmt.Sprintf("用户[%s]连续签到失败", userID),
 		})
+		global.App.Log.Error("用户连续签到失败", zap.Any("err", err))
 		return
 	} else {
+		expAt := beginningOfDay().Add(2 * time.Minute)
 		// 2. 设置签到记录在后天的0点到期
 		if err := RedisClient.ExpireAt(ctx, key, expAt).Err(); err != nil {
 			panic(err)
@@ -71,6 +69,14 @@ func CheckIn(ctx *gin.Context) {
 				return
 			}
 			day, err := getUserCheckInDays(ctx, id)
+			if err != nil {
+				ctx.JSON(http.StatusInternalServerError, gin.H{
+					"status": err.Error(),
+				})
+				return
+			}
+			var offset int = time.Now().Local().Minute() - 1
+			_, err = RedisClient.SetBit(ctx, bKey, int64(offset), 1).Result()
 			if err != nil {
 				ctx.JSON(http.StatusInternalServerError, gin.H{
 					"status": err.Error(),
@@ -101,9 +107,17 @@ func getUserCheckInDays(ctx context.Context, userID int64) (int64, error) {
 	}
 }
 
+func checkSign(ctx context.Context, key string) (int64, error) {
+	var offset int = time.Now().Local().Minute() - 1
+	RedisClient := global.App.Redis
+	return RedisClient.GetBit(ctx, key, int64(offset)).Result()
+}
+
 // beginningOfDay 获取今天0点时间
 func beginningOfDay() time.Time {
 	now := time.Now()
 	y, m, d := now.Date()
-	return time.Date(y, m, d, 0, 0, 0, 0, time.Local)
+	h := now.Hour()
+	min := now.Minute()
+	return time.Date(y, m, d, h, min, 0, 0, time.Local)
 }

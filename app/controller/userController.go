@@ -4,11 +4,12 @@ import (
 	model2 "databaseDemo/app/model"
 	"databaseDemo/global"
 	"fmt"
-	"github.com/gin-gonic/gin"
-	"golang.org/x/crypto/bcrypt"
-	"github.com/goccy/go-json"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/goccy/go-json"
+	"golang.org/x/crypto/bcrypt"
 )
 
 func Register(ctx *gin.Context) {
@@ -120,69 +121,65 @@ func RawSQL(ctx *gin.Context) {
 	db := global.App.RDB
 	var requestBody model2.RequestBody
 	if err := ctx.ShouldBindJSON(&requestBody); err != nil {
-		panic("RawSQL: ctx.ShouldBindJSON failed\n")
+		ctx.JSON(http.StatusBadRequest, gin.H{"status": err.Error()})
+		return
 	}
 	sql := requestBody.SQL
-	if sql[0] == 'I' || sql[0] == 'i' {
-		if _, err := db.Exec(sql); err != nil {
+	if sql[0] == 's' || sql[0] == 'S' {
+		rows, err := db.Query(sql)
+		if err != nil {
 			ctx.JSON(http.StatusInternalServerError, gin.H{"status": err.Error()})
 			return
 		}
-		ctx.JSON(http.StatusOK, gin.H{"status": "OK"})
-		return
-	} else if sql[0] == 'C' || sql[0] == 'c' {
-		if _, err := db.Exec(sql); err != nil {
+		defer rows.Close()
+		columns, err := rows.Columns()
+		if err != nil {
 			ctx.JSON(http.StatusInternalServerError, gin.H{"status": err.Error()})
 			return
 		}
-		ctx.JSON(http.StatusOK, gin.H{"status": "OK"})
-		return
-	}
-	rows, err := db.Query(sql)
-	if err != nil {
-		panic(err)
-	}
-	defer rows.Close()
-	columns, err := rows.Columns()
-	if err != nil {
-		panic(err)
-	}
 
-	values := make([]interface{}, len(columns))
-	for i := range values {
-		values[i] = new(interface{})
-	}
-	var result []map[string]string
-	for rows.Next() {
-		err := rows.Scan(values...)
+		values := make([]interface{}, len(columns))
+		for i := range values {
+			values[i] = new(interface{})
+		}
+		var result []map[string]string
+		for rows.Next() {
+			err := rows.Scan(values...)
+			if err != nil {
+				panic(err)
+			}
+
+			// 打印查询结果及其字段名
+			rowData := make(map[string]string)
+			for i, v := range values {
+				fmt.Printf("%s: ", columns[i])
+				s, ok := (*v.(*interface{})).([]byte)
+				rowData[columns[i]] = string(s)
+				if !ok {
+					// 处理类型断言失败的情况
+					continue
+				}
+				for _, val := range s {
+					fmt.Printf("%c", val)
+				}
+				fmt.Println()
+			}
+			result = append(result, rowData)
+		}
+		jsonData, err := json.Marshal(result)
 		if err != nil {
 			panic(err)
 		}
-
-		// 打印查询结果及其字段名
-		rowData := make(map[string]string)
-		for i, v := range values {
-			fmt.Printf("%s: ", columns[i])
-			s, ok := (*v.(*interface{})).([]byte)
-			rowData[columns[i]] = string(s)
-			if !ok {
-				// 处理类型断言失败的情况
-				continue
-			}
-			for _, val := range s {
-				fmt.Printf("%c", val)
-			}
-			fmt.Println()
+		ctx.Header("Content-Type", "application/json")
+		ctx.Status(http.StatusOK)
+		ctx.Writer.Write([]byte(jsonData))
+	} else {
+		if _, err := db.Exec(sql); err != nil {
+			ctx.JSON(http.StatusInternalServerError, gin.H{"status": err.Error()})
+			return
 		}
-		result = append(result, rowData)
+		ctx.JSON(http.StatusOK, gin.H{"status": "OK"})
 	}
-	jsonData, err := json.Marshal(result)
-	if err != nil {
-		panic(err)
-	}
-	ctx.Header("Content-Type", "application/json")
-	ctx.Status(http.StatusOK)
-	ctx.Writer.Write([]byte(jsonData))
 }
 
 func Login(ctx *gin.Context) {

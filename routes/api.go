@@ -2,9 +2,10 @@ package routes
 
 import (
 	"databaseDemo/app/controller"
-	"github.com/gin-gonic/gin"
 	"net/http"
 	"time"
+
+	"github.com/gin-gonic/gin"
 )
 
 // SetApiGroupRoutes 定义 api 分组路由
@@ -35,5 +36,12 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 
 	router.POST("/Zset", controller.Zset)
 
-}
+	router.POST("/TxBegin", controller.TxBegin)
 
+	router.POST("/TxCommit", controller.TxCommit)
+
+	router.POST("/TxRaw", controller.TxRaw)
+
+	router.POST("/TxRollback", controller.TxRollBack)
+
+}

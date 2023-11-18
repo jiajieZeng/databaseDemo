@@ -1,13 +1,14 @@
 package global
 
 import (
+	"database/sql"
 	"databaseDemo/config"
+
+	"github.com/go-redis/redis/v9"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
-	_ "github.com/go-sql-driver/mysql"
-	"database/sql"
-	"github.com/go-redis/redis/v9"
 )
 
 type Application struct {
@@ -16,7 +17,8 @@ type Application struct {
 	Log         *zap.Logger
 	DB          *gorm.DB
 	RDB         *sql.DB
-	Redis 		*redis.Client
+	Redis       *redis.Client
+	Tx          *sql.Tx
 }
 
 var App = new(Application)
