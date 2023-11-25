@@ -217,7 +217,6 @@ func change(ctx *gin.Context, userID int64, field string, incr int64) {
 		panic(err)
 	}
 	if beforeInt+incr < 0 {
-		// fmt.Printf("禁止变更计数，计数变更后小于0. %d + (%d) = %d\n", beforeInt, incr, beforeInt+incr)
 		ctx.JSON(403, gin.H{
 			"status": fmt.Sprintf("禁止变更计数，计数变更后小于0. %d + (%d) = %d\n", beforeInt, incr, beforeInt+incr),
 		})
@@ -230,12 +229,10 @@ func change(ctx *gin.Context, userID int64, field string, incr int64) {
 	if err != nil {
 		panic(err)
 	}
-	// fmt.Printf("更新记录[%d]:%d\n", userID, num)
 	count, err := global.App.Redis.HGet(ctx, redisKey, field).Result()
 	if err != nil {
 		panic(err)
 	}
-	// fmt.Printf("user_id: %d\n更新后\n%s = %s\n--------\n", userID, field, count)
 	ctx.JSON(200, gin.H{
 		"userID": strconv.FormatInt(userID, 10),
 		"before": fmt.Sprintf("%s = %s", beforeField, beforeB),
