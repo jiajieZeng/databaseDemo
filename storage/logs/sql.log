@@ -232,3 +232,1068 @@
 
 2023/11/18 20:39:50 /root/workspace/databaseDemo/bootstrap/db.go:125
 [0.496ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/11/19 13:37:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.096ms] [rows:-] SELECT DATABASE()
+
+2023/11/19 13:37:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.447ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/19 13:37:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.309ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/19 13:37:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.077ms] [rows:-] SELECT DATABASE()
+
+2023/11/19 13:37:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.370ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/19 13:37:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.166ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/11/19 13:37:15 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.506ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/11/20 16:02:39 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.143ms] [rows:-] SELECT DATABASE()
+
+2023/11/20 16:02:39 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.650ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/20 16:02:39 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.267ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/20 16:02:39 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.097ms] [rows:-] SELECT DATABASE()
+
+2023/11/20 16:02:39 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.431ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/20 16:02:39 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.186ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/11/20 16:02:39 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.597ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/11/20 16:02:39 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.148ms] [rows:-] SELECT DATABASE()
+
+2023/11/20 16:02:39 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.331ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/20 16:02:39 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.267ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/11/20 16:02:39 /root/workspace/databaseDemo/bootstrap/db.go:125
+[12.486ms] [rows:0] CREATE TABLE `zset_users` (`id` bigint unsigned AUTO_INCREMENT,`created_at` datetime NULL,`updated_at` datetime NULL,`deleted_at` datetime NULL,`name` varchar(191) NOT NULL,`score` double NOT NULL,PRIMARY KEY (`id`))
+
+2023/11/20 16:02:39 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.123ms] [rows:-] SELECT DATABASE()
+
+2023/11/20 16:02:39 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.519ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/20 16:02:39 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.302ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/11/20 16:02:39 /root/workspace/databaseDemo/bootstrap/db.go:125
+[10.061ms] [rows:0] CREATE TABLE `hash_users` (`id` bigint unsigned AUTO_INCREMENT,`created_at` datetime NULL,`updated_at` datetime NULL,`deleted_at` datetime NULL,`user_id` varchar(191) NOT NULL,`got_digg_count` bigint,`got_view_count` bigint,`followee_count` bigint,`follower_count` bigint,`follow_collect_set_count` bigint,`subscribe_tag_count` bigint,PRIMARY KEY (`id`))
+
+2023/11/20 16:03:36 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[3.582ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-20 16:03:36.192','2023-11-20 16:03:36.192',NULL,'114514',10693,223,76,995,575,95)
+
+2023/11/20 16:03:36 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[2.281ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-20 16:03:36.195','2023-11-20 16:03:36.195',NULL,'1111',19,2238438,1716,98895,75,5)
+
+2023/11/20 16:03:36 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[1.798ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-20 16:03:36.197','2023-11-20 16:03:36.197',NULL,'2222',1238,22338,1176,85,788,99)
+
+2023/11/20 16:03:36 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[1.065ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-20 16:03:36.199','2023-11-20 16:03:36.199',NULL,'3333',1238,38438,1786,779895,878,18)
+
+2023/11/20 16:03:36 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[2.612ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-20 16:03:36.201','2023-11-20 16:03:36.201',NULL,'4444',19,3438,18,1000,10,114)
+
+2023/11/20 16:03:36 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[1.010ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-20 16:03:36.203','2023-11-20 16:03:36.203',NULL,'5555',10693,18438,188,11495,20,541)
+
+2023/11/20 16:03:36 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[0.878ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-20 16:03:36.204','2023-11-20 16:03:36.204',NULL,'1919810',10693,84138,0,2547,30,810)
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.109ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.536ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.281ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.082ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.486ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.200ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.667ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.080ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.298ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.231ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.099ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.272ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.149ms] [rows:-] SELECT * FROM `zset_users` LIMIT 1
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.519ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'zset_users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.076ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.379ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.252ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.093ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.442ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.200ms] [rows:-] SELECT * FROM `hash_users` LIMIT 1
+
+2023/11/25 23:00:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.451ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'hash_users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:01:03 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[3.267ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:01:03.551','2023-11-25 23:01:03.551',NULL,'114514',10693,223,76,995,575,95)
+
+2023/11/25 23:01:03 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[1.999ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:01:03.554','2023-11-25 23:01:03.554',NULL,'1111',19,2238438,1716,98895,75,5)
+
+2023/11/25 23:01:03 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[3.909ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:01:03.556','2023-11-25 23:01:03.556',NULL,'2222',1238,22338,1176,85,788,99)
+
+2023/11/25 23:01:03 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[0.889ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:01:03.56','2023-11-25 23:01:03.56',NULL,'3333',1238,38438,1786,779895,878,18)
+
+2023/11/25 23:01:03 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[1.708ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:01:03.561','2023-11-25 23:01:03.561',NULL,'4444',19,3438,18,1000,10,114)
+
+2023/11/25 23:01:03 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[0.881ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:01:03.563','2023-11-25 23:01:03.563',NULL,'5555',10693,18438,188,11495,20,541)
+
+2023/11/25 23:01:03 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[0.998ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:01:03.564','2023-11-25 23:01:03.564',NULL,'1919810',10693,84138,0,2547,30,810)
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.134ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.394ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.246ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.089ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.406ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.187ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.758ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.111ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.692ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.394ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.167ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.520ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.178ms] [rows:-] SELECT * FROM `zset_users` LIMIT 1
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.508ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'zset_users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.076ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.510ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.316ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.082ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.621ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.236ms] [rows:-] SELECT * FROM `hash_users` LIMIT 1
+
+2023/11/25 23:03:49 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.570ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'hash_users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.089ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.464ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.269ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.076ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.355ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.180ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.484ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.153ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.272ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.234ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.075ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.321ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.143ms] [rows:-] SELECT * FROM `zset_users` LIMIT 1
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.414ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'zset_users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.099ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.296ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.226ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.074ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.370ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.163ms] [rows:-] SELECT * FROM `hash_users` LIMIT 1
+
+2023/11/25 23:11:02 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.471ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'hash_users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:11:11 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[2.061ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:11:11.888','2023-11-25 23:11:11.888',NULL,'114514',10693,223,76,995,575,95)
+
+2023/11/25 23:11:11 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[1.955ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:11:11.89','2023-11-25 23:11:11.89',NULL,'1111',19,2238438,1716,98895,75,5)
+
+2023/11/25 23:11:11 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[0.899ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:11:11.892','2023-11-25 23:11:11.892',NULL,'2222',1238,22338,1176,85,788,99)
+
+2023/11/25 23:11:11 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[2.775ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:11:11.894','2023-11-25 23:11:11.894',NULL,'3333',1238,38438,1786,779895,878,18)
+
+2023/11/25 23:11:11 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[0.959ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:11:11.896','2023-11-25 23:11:11.896',NULL,'4444',19,3438,18,1000,10,114)
+
+2023/11/25 23:11:11 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[0.928ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:11:11.897','2023-11-25 23:11:11.897',NULL,'5555',10693,18438,188,11495,20,541)
+
+2023/11/25 23:11:11 /root/workspace/databaseDemo/app/controller/redisHashController.go:215
+[1.697ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:11:11.898','2023-11-25 23:11:11.898',NULL,'1919810',10693,84138,0,2547,30,810)
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.090ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.468ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.279ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.062ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.347ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.251ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.507ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.094ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.346ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.237ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.071ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.320ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.155ms] [rows:-] SELECT * FROM `zset_users` LIMIT 1
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.383ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'zset_users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.083ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.363ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.216ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:18:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[12.327ms] [rows:0] CREATE TABLE `hash_users` (`id` bigint unsigned AUTO_INCREMENT,`created_at` datetime NULL,`updated_at` datetime NULL,`deleted_at` datetime NULL,`user_id` bigint NOT NULL,`got_digg_count` bigint,`got_view_count` bigint,`followee_count` bigint,`follower_count` bigint,`follow_collect_set_count` bigint,`subscribe_tag_count` bigint,PRIMARY KEY (`id`,`user_id`))
+
+2023/11/25 23:18:26 /root/workspace/databaseDemo/app/controller/redisHashController.go:216
+[3.470ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:18:26.95','2023-11-25 23:18:26.95',NULL,114514,10693,223,76,995,575,95)
+
+2023/11/25 23:18:26 /root/workspace/databaseDemo/app/controller/redisHashController.go:216
+[2.006ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:18:26.953','2023-11-25 23:18:26.953',NULL,1111,19,2238438,1716,98895,75,5)
+
+2023/11/25 23:18:26 /root/workspace/databaseDemo/app/controller/redisHashController.go:216
+[0.989ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:18:26.955','2023-11-25 23:18:26.955',NULL,2222,1238,22338,1176,85,788,99)
+
+2023/11/25 23:18:26 /root/workspace/databaseDemo/app/controller/redisHashController.go:216
+[1.011ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:18:26.956','2023-11-25 23:18:26.956',NULL,3333,1238,38438,1786,779895,878,18)
+
+2023/11/25 23:18:26 /root/workspace/databaseDemo/app/controller/redisHashController.go:216
+[1.730ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:18:26.957','2023-11-25 23:18:26.957',NULL,4444,19,3438,18,1000,10,114)
+
+2023/11/25 23:18:26 /root/workspace/databaseDemo/app/controller/redisHashController.go:216
+[0.836ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:18:26.959','2023-11-25 23:18:26.959',NULL,5555,10693,18438,188,11495,20,541)
+
+2023/11/25 23:18:26 /root/workspace/databaseDemo/app/controller/redisHashController.go:216
+[0.876ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:18:26.96','2023-11-25 23:18:26.96',NULL,1919810,10693,84138,0,2547,30,810)
+
+2023/11/25 23:18:38 /root/workspace/databaseDemo/app/controller/redisHashController.go:216 Error 1146 (42S02): Table 'webtest.hash_users' doesn't exist
+[0.558ms] [rows:0] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:18:38.402','2023-11-25 23:18:38.402',NULL,114514,10693,223,76,995,575,95)
+
+2023/11/25 23:18:38 /root/workspace/databaseDemo/app/controller/redisHashController.go:216 Error 1146 (42S02): Table 'webtest.hash_users' doesn't exist
+[0.321ms] [rows:0] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:18:38.402','2023-11-25 23:18:38.402',NULL,1111,19,2238438,1716,98895,75,5)
+
+2023/11/25 23:18:38 /root/workspace/databaseDemo/app/controller/redisHashController.go:216 Error 1146 (42S02): Table 'webtest.hash_users' doesn't exist
+[0.324ms] [rows:0] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:18:38.403','2023-11-25 23:18:38.403',NULL,2222,1238,22338,1176,85,788,99)
+
+2023/11/25 23:18:38 /root/workspace/databaseDemo/app/controller/redisHashController.go:216 Error 1146 (42S02): Table 'webtest.hash_users' doesn't exist
+[0.315ms] [rows:0] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:18:38.403','2023-11-25 23:18:38.403',NULL,3333,1238,38438,1786,779895,878,18)
+
+2023/11/25 23:18:38 /root/workspace/databaseDemo/app/controller/redisHashController.go:216 Error 1146 (42S02): Table 'webtest.hash_users' doesn't exist
+[0.327ms] [rows:0] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:18:38.404','2023-11-25 23:18:38.404',NULL,4444,19,3438,18,1000,10,114)
+
+2023/11/25 23:18:38 /root/workspace/databaseDemo/app/controller/redisHashController.go:216 Error 1146 (42S02): Table 'webtest.hash_users' doesn't exist
+[0.320ms] [rows:0] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:18:38.404','2023-11-25 23:18:38.404',NULL,5555,10693,18438,188,11495,20,541)
+
+2023/11/25 23:18:38 /root/workspace/databaseDemo/app/controller/redisHashController.go:216 Error 1146 (42S02): Table 'webtest.hash_users' doesn't exist
+[0.318ms] [rows:0] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:18:38.404','2023-11-25 23:18:38.404',NULL,1919810,10693,84138,0,2547,30,810)
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.084ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.478ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.276ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.086ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.441ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.161ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.603ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.095ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.416ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.315ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.095ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.375ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.213ms] [rows:-] SELECT * FROM `zset_users` LIMIT 1
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.574ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'zset_users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.108ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.367ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.319ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:19:25 /root/workspace/databaseDemo/bootstrap/db.go:125
+[10.666ms] [rows:0] CREATE TABLE `hash_users` (`id` bigint unsigned AUTO_INCREMENT,`created_at` datetime NULL,`updated_at` datetime NULL,`deleted_at` datetime NULL,`user_id` bigint NOT NULL,`got_digg_count` bigint,`got_view_count` bigint,`followee_count` bigint,`follower_count` bigint,`follow_collect_set_count` bigint,`subscribe_tag_count` bigint,PRIMARY KEY (`id`,`user_id`))
+
+2023/11/25 23:19:33 /root/workspace/databaseDemo/app/controller/redisHashController.go:216
+[2.461ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:19:33.626','2023-11-25 23:19:33.626',NULL,114514,10693,223,76,995,575,95)
+
+2023/11/25 23:19:33 /root/workspace/databaseDemo/app/controller/redisHashController.go:216
+[2.068ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:19:33.629','2023-11-25 23:19:33.629',NULL,1111,19,2238438,1716,98895,75,5)
+
+2023/11/25 23:19:33 /root/workspace/databaseDemo/app/controller/redisHashController.go:216
+[1.207ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:19:33.631','2023-11-25 23:19:33.631',NULL,2222,1238,22338,1176,85,788,99)
+
+2023/11/25 23:19:33 /root/workspace/databaseDemo/app/controller/redisHashController.go:216
+[0.965ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:19:33.632','2023-11-25 23:19:33.632',NULL,3333,1238,38438,1786,779895,878,18)
+
+2023/11/25 23:19:33 /root/workspace/databaseDemo/app/controller/redisHashController.go:216
+[1.713ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:19:33.633','2023-11-25 23:19:33.633',NULL,4444,19,3438,18,1000,10,114)
+
+2023/11/25 23:19:33 /root/workspace/databaseDemo/app/controller/redisHashController.go:216
+[0.862ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:19:33.635','2023-11-25 23:19:33.635',NULL,5555,10693,18438,188,11495,20,541)
+
+2023/11/25 23:19:33 /root/workspace/databaseDemo/app/controller/redisHashController.go:216
+[0.815ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:19:33.636','2023-11-25 23:19:33.636',NULL,1919810,10693,84138,0,2547,30,810)
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.088ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.381ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.235ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.060ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.302ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.138ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.405ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.079ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.276ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.207ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.070ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.288ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.151ms] [rows:-] SELECT * FROM `zset_users` LIMIT 1
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.374ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'zset_users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.075ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.261ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.216ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.060ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.245ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.148ms] [rows:-] SELECT * FROM `hash_users` LIMIT 1
+
+2023/11/25 23:23:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.429ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'hash_users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:28:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.086ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:28:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.395ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:28:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.280ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:28:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[14.307ms] [rows:0] CREATE TABLE `users` (`id` bigint unsigned AUTO_INCREMENT,`created_at` datetime NULL,`updated_at` datetime NULL,`deleted_at` datetime NULL,`name` varchar(191) NOT NULL,`telephone` varchar(191) NOT NULL UNIQUE,`password` varchar(255) NOT NULL,PRIMARY KEY (`id`))
+
+2023/11/25 23:28:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.134ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:28:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.507ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:28:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.363ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:28:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[9.948ms] [rows:0] CREATE TABLE `zset_users` (`id` bigint unsigned AUTO_INCREMENT,`created_at` datetime NULL,`updated_at` datetime NULL,`deleted_at` datetime NULL,`name` varchar(191) NOT NULL,`score` double NOT NULL,PRIMARY KEY (`id`))
+
+2023/11/25 23:28:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.119ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:28:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.398ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:28:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.349ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:28:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[9.241ms] [rows:0] CREATE TABLE `hash_users` (`id` bigint unsigned AUTO_INCREMENT,`created_at` datetime NULL,`updated_at` datetime NULL,`deleted_at` datetime NULL,`user_id` bigint NOT NULL,`got_digg_count` bigint,`got_view_count` bigint,`followee_count` bigint,`follower_count` bigint,`follow_collect_set_count` bigint,`subscribe_tag_count` bigint,PRIMARY KEY (`id`,`user_id`))
+
+2023/11/25 23:34:55 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.078ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:34:55 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.419ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:34:55 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.313ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:34:55 /root/workspace/databaseDemo/bootstrap/db.go:125
+[12.697ms] [rows:0] CREATE TABLE `users` (`id` bigint unsigned AUTO_INCREMENT,`created_at` datetime NULL,`updated_at` datetime NULL,`deleted_at` datetime NULL,`name` varchar(191) NOT NULL,`telephone` varchar(191) NOT NULL UNIQUE,`password` varchar(255) NOT NULL,PRIMARY KEY (`id`))
+
+2023/11/25 23:34:55 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.120ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:34:55 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.490ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:34:55 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.277ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:34:55 /root/workspace/databaseDemo/bootstrap/db.go:125
+[9.955ms] [rows:0] CREATE TABLE `zset_users` (`id` bigint unsigned AUTO_INCREMENT,`created_at` datetime NULL,`updated_at` datetime NULL,`deleted_at` datetime NULL,`name` varchar(191) NOT NULL,`score` double NOT NULL,PRIMARY KEY (`id`))
+
+2023/11/25 23:34:55 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.146ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:34:55 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.383ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:34:55 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.332ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:34:55 /root/workspace/databaseDemo/bootstrap/db.go:125
+[8.832ms] [rows:0] CREATE TABLE `hash_users` (`id` bigint unsigned AUTO_INCREMENT,`created_at` datetime NULL,`updated_at` datetime NULL,`deleted_at` datetime NULL,`user_id` bigint NOT NULL,`got_digg_count` bigint,`got_view_count` bigint,`followee_count` bigint,`follower_count` bigint,`follow_collect_set_count` bigint,`subscribe_tag_count` bigint,PRIMARY KEY (`id`,`user_id`))
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.084ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.426ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.243ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.077ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.335ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.170ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.409ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.080ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.289ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.187ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.074ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.313ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.227ms] [rows:-] SELECT * FROM `zset_users` LIMIT 1
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.462ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'zset_users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.080ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.343ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.298ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.108ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.415ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.268ms] [rows:-] SELECT * FROM `hash_users` LIMIT 1
+
+2023/11/25 23:45:14 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.532ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'hash_users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:45:23 /root/workspace/databaseDemo/app/controller/redisHashController.go:222
+[2.154ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:45:23.298','2023-11-25 23:45:23.298',NULL,114514,10693,223,76,995,575,95)
+
+2023/11/25 23:45:23 /root/workspace/databaseDemo/app/controller/redisHashController.go:222
+[3.263ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:45:23.3','2023-11-25 23:45:23.3',NULL,1111,19,2238438,1716,98895,75,5)
+
+2023/11/25 23:45:23 /root/workspace/databaseDemo/app/controller/redisHashController.go:222
+[1.164ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:45:23.303','2023-11-25 23:45:23.303',NULL,2222,1238,22338,1176,85,788,99)
+
+2023/11/25 23:45:23 /root/workspace/databaseDemo/app/controller/redisHashController.go:222
+[1.979ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:45:23.305','2023-11-25 23:45:23.305',NULL,3333,1238,38438,1786,779895,878,18)
+
+2023/11/25 23:45:23 /root/workspace/databaseDemo/app/controller/redisHashController.go:222
+[1.078ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:45:23.307','2023-11-25 23:45:23.307',NULL,4444,19,3438,18,1000,10,114)
+
+2023/11/25 23:45:23 /root/workspace/databaseDemo/app/controller/redisHashController.go:222
+[1.048ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:45:23.308','2023-11-25 23:45:23.308',NULL,5555,10693,18438,188,11495,20,541)
+
+2023/11/25 23:45:23 /root/workspace/databaseDemo/app/controller/redisHashController.go:222
+[2.220ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:45:23.309','2023-11-25 23:45:23.309',NULL,1919810,10693,84138,0,2547,30,810)
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.105ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.438ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.236ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.069ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.340ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.182ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.471ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.113ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.288ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.289ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.068ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.373ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.136ms] [rows:-] SELECT * FROM `zset_users` LIMIT 1
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.417ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'zset_users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.085ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.347ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.216ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.069ms] [rows:-] SELECT DATABASE()
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.325ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.320ms] [rows:-] SELECT * FROM `hash_users` LIMIT 1
+
+2023/11/25 23:50:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.431ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'hash_users' ORDER BY ORDINAL_POSITION
+
+2023/11/25 23:50:55 /root/workspace/databaseDemo/app/controller/redisHashController.go:223
+[2.421ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:50:55.265','2023-11-25 23:50:55.265',NULL,114514,10693,223,76,995,575,95)
+
+2023/11/25 23:50:55 /root/workspace/databaseDemo/app/controller/redisHashController.go:223
+[1.125ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:50:55.267','2023-11-25 23:50:55.267',NULL,1111,19,2238438,1716,98895,75,5)
+
+2023/11/25 23:50:55 /root/workspace/databaseDemo/app/controller/redisHashController.go:223
+[1.264ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:50:55.268','2023-11-25 23:50:55.268',NULL,2222,1238,22338,1176,85,788,99)
+
+2023/11/25 23:50:55 /root/workspace/databaseDemo/app/controller/redisHashController.go:223
+[1.848ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:50:55.269','2023-11-25 23:50:55.269',NULL,3333,1238,38438,1786,779895,878,18)
+
+2023/11/25 23:50:55 /root/workspace/databaseDemo/app/controller/redisHashController.go:223
+[0.996ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:50:55.271','2023-11-25 23:50:55.271',NULL,4444,19,3438,18,1000,10,114)
+
+2023/11/25 23:50:55 /root/workspace/databaseDemo/app/controller/redisHashController.go:223
+[0.937ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:50:55.272','2023-11-25 23:50:55.272',NULL,5555,10693,18438,188,11495,20,541)
+
+2023/11/25 23:50:55 /root/workspace/databaseDemo/app/controller/redisHashController.go:223
+[1.848ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-25 23:50:55.273','2023-11-25 23:50:55.273',NULL,1919810,10693,84138,0,2547,30,810)
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.119ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.463ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.275ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.097ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.348ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.184ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.481ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.083ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.429ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.291ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.075ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.264ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.155ms] [rows:-] SELECT * FROM `zset_users` LIMIT 1
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.439ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'zset_users' ORDER BY ORDINAL_POSITION
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.088ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.692ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.253ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.076ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.316ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.180ms] [rows:-] SELECT * FROM `hash_users` LIMIT 1
+
+2023/11/26 00:07:43 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.507ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'hash_users' ORDER BY ORDINAL_POSITION
+
+2023/11/26 00:08:10 /root/workspace/databaseDemo/app/controller/redisHashController.go:293
+[2.241ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-26 00:08:10.396','2023-11-26 00:08:10.396',NULL,114514,10693,223,76,995,575,95)
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.213ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.504ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.390ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.076ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.371ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.252ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.524ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.103ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.345ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.200ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.066ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.349ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.174ms] [rows:-] SELECT * FROM `zset_users` LIMIT 1
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.506ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'zset_users' ORDER BY ORDINAL_POSITION
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.082ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.386ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.191ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.064ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.289ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.223ms] [rows:-] SELECT * FROM `hash_users` LIMIT 1
+
+2023/11/26 00:11:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.420ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'hash_users' ORDER BY ORDINAL_POSITION
+
+2023/11/26 00:11:10 /root/workspace/databaseDemo/app/controller/redisHashController.go:146 record not found
+[2.021ms] [rows:0] SELECT * FROM `hash_users` WHERE `user_id` = 12121212 ORDER BY `hash_users`.`id` LIMIT 1
+
+2023/11/26 00:12:22 /root/workspace/databaseDemo/app/controller/redisHashController.go:292
+[2.211ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-26 00:12:22.054','2023-11-26 00:12:22.054',NULL,114514,10693,223,76,995,575,95)
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.106ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.563ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.340ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.066ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.407ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.166ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.410ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.088ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.338ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.227ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.063ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.272ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.230ms] [rows:-] SELECT * FROM `zset_users` LIMIT 1
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.450ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'zset_users' ORDER BY ORDINAL_POSITION
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.103ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.349ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.361ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.068ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.310ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.166ms] [rows:-] SELECT * FROM `hash_users` LIMIT 1
+
+2023/11/26 00:14:04 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.513ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'hash_users' ORDER BY ORDINAL_POSITION
+
+2023/11/26 00:14:07 /root/workspace/databaseDemo/app/controller/redisHashController.go:294
+[2.846ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-26 00:14:07.794','2023-11-26 00:14:07.794',NULL,114514,10693,223,76,995,575,95)
+
+2023/11/26 00:15:01 /root/workspace/databaseDemo/app/controller/redisHashController.go:294
+[2.421ms] [rows:1] INSERT INTO `hash_users` (`created_at`,`updated_at`,`deleted_at`,`user_id`,`got_digg_count`,`got_view_count`,`followee_count`,`follower_count`,`follow_collect_set_count`,`subscribe_tag_count`) VALUES ('2023-11-26 00:15:01.517','2023-11-26 00:15:01.517',NULL,1105,10693,223,76,995,575,95)
+
+2023/11/26 00:15:13 /root/workspace/databaseDemo/app/controller/redisHashController.go:148
+[0.472ms] [rows:1] SELECT * FROM `hash_users` WHERE `user_id` = 1105 ORDER BY `hash_users`.`id` LIMIT 1
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.110ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.398ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.237ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.116ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.341ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.161ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.410ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.091ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.278ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.215ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.072ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.249ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.129ms] [rows:-] SELECT * FROM `zset_users` LIMIT 1
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.393ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'zset_users' ORDER BY ORDINAL_POSITION
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.078ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.252ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.219ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.074ms] [rows:-] SELECT DATABASE()
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.302ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.137ms] [rows:-] SELECT * FROM `hash_users` LIMIT 1
+
+2023/11/26 00:28:28 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.414ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'hash_users' ORDER BY ORDINAL_POSITION
+
+2023/11/26 00:28:35 /root/workspace/databaseDemo/app/controller/redisHashController.go:148
+[0.517ms] [rows:1] SELECT * FROM `hash_users` WHERE `user_id` = 1105 ORDER BY `hash_users`.`id` LIMIT 1

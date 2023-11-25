@@ -19,3 +19,19 @@
 [2023-11-18 20:36:07.163]	local.info	databaseDemo/main.go:14	log init success!
 [2023-11-18 20:37:02.556]	local.error	controller/redisCheckInController.go:53	用户连续签到失败	{"err": "ERR value is not an integer or out of range"}
 [2023-11-18 20:39:50.450]	local.info	databaseDemo/main.go:14	log init success!
+[2023-11-19 13:37:14.996]	local.info	databaseDemo/main.go:14	log init success!
+[2023-11-20 16:02:39.613]	local.info	databaseDemo/main.go:14	log init success!
+[2023-11-25 23:00:28.229]	local.info	databaseDemo/main.go:14	log init success!
+[2023-11-25 23:03:49.192]	local.info	databaseDemo/main.go:14	log init success!
+[2023-11-25 23:11:02.219]	local.info	databaseDemo/main.go:14	log init success!
+[2023-11-25 23:18:23.777]	local.info	databaseDemo/main.go:14	log init success!
+[2023-11-25 23:19:25.405]	local.info	databaseDemo/main.go:14	log init success!
+[2023-11-25 23:23:14.382]	local.info	databaseDemo/main.go:14	log init success!
+[2023-11-25 23:28:43.690]	local.info	databaseDemo/main.go:14	log init success!
+[2023-11-25 23:34:55.856]	local.info	databaseDemo/main.go:14	log init success!
+[2023-11-25 23:45:14.518]	local.info	databaseDemo/main.go:14	log init success!
+[2023-11-25 23:50:23.891]	local.info	databaseDemo/main.go:14	log init success!
+[2023-11-26 00:07:43.136]	local.info	databaseDemo/main.go:14	log init success!
+[2023-11-26 00:11:06.804]	local.info	databaseDemo/main.go:14	log init success!
+[2023-11-26 00:14:04.759]	local.info	databaseDemo/main.go:14	log init success!
+[2023-11-26 00:28:28.326]	local.info	databaseDemo/main.go:14	log init success!
