@@ -1,16 +1,17 @@
 package controller
 
 import (
-	"fmt"
 	model2 "databaseDemo/app/model"
-	"github.com/gin-gonic/gin"
-	"net/http"
-	"github.com/goccy/go-json"
 	"databaseDemo/global"
-	"github.com/go-redis/redis/v9"
+	"fmt"
 	"math/rand"
-	"time"
+	"net/http"
 	"strconv"
+	"time"
+
+	"github.com/gin-gonic/gin"
+	"github.com/go-redis/redis/v9"
+	"github.com/goccy/go-json"
 )
 
 const Ex06RankKey = "ex06_rank_zset"
@@ -20,9 +21,9 @@ type Ex06ItemScore struct {
 	Score   float64
 }
 
-type Value struct {  
-    Str  string  
-    Num  string
+type Value struct {
+	Str string
+	Num string
 }
 
 // Ex06 排行榜
@@ -71,18 +72,18 @@ func Zset(ctx *gin.Context) {
 }
 
 func Ex06InitUserScore(ctx *gin.Context) {
-	members := make([]string, 100)  
-	for i := 1; i <= 100; i++ {  
-		Name := fmt.Sprintf("user%d", i)  
-		members[i-1] = Name  
-	}  
+	members := make([]string, 100)
+	for i := 1; i <= 100; i++ {
+		Name := fmt.Sprintf("user%d", i)
+		members[i-1] = Name
+	}
 	scores := make([]float64, 100)
-	rand.Seed(time.Now().UnixNano())  
-	min := 0.0   // 最小值  
-	max := 500.0 // 最大值  
-	for i := 1; i <= 100; i++ {  
-		scores[i - 1] = min + rand.Float64()*(max-min)
-	}  	
+	rand.Seed(time.Now().UnixNano())
+	min := 0.0   // 最小值
+	max := 500.0 // 最大值
+	for i := 1; i <= 100; i++ {
+		scores[i-1] = min + rand.Float64()*(max-min)
+	}
 	// users := make(map[string]string
 	var users []map[string]string
 	for i := 0; i < 100; i++ {
@@ -94,9 +95,9 @@ func Ex06InitUserScore(ctx *gin.Context) {
 	}
 	initList := make([]redis.Z, 100)
 	for i := 1; i <= 100; i++ {
-		initList[i - 1] = redis.Z{Member: members[i - 1], Score: scores[i - 1]}
+		initList[i-1] = redis.Z{Member: members[i-1], Score: scores[i-1]}
 	}
- 	// 清空榜单
+	// 清空榜单
 	if err := global.App.Redis.Del(ctx, Ex06RankKey).Err(); err != nil {
 		panic(err)
 	}
@@ -125,7 +126,7 @@ func GetRevOrderAllList(ctx *gin.Context, limit, offset int64) {
 	if err != nil {
 		panic(err)
 	}
-	// list := make(map[string]Value) 
+	// list := make(map[string]Value)
 	var result []map[string]string
 	// fmt.Printf("\n榜单:\n")
 	for i, z := range resList {
@@ -133,9 +134,9 @@ func GetRevOrderAllList(ctx *gin.Context, limit, offset int64) {
 		// fmt.Printf("第%d名 %s\t%f\n", i+1, z.Member, z.Score)
 		// s := fmt.Sprintf("%d", i + 1);
 		// zeros := strings.Repeat("0", 15 - len(s))
-		rowData["rank"] = fmt.Sprintf("%d", i + 1);
+		rowData["rank"] = fmt.Sprintf("%d", i+1)
 		rowData["name"] = z.Member.(string)
-		rowData["score"] = fmt.Sprintf("%f", z.Score)  
+		rowData["score"] = fmt.Sprintf("%f", z.Score)
 		// list[fmt.Sprintf("%s%d", zeros, i + 1)] = Value{z.Member.(string), fmt.Sprintf("%f", z.Score)}
 		result = append(result, rowData)
 	}
@@ -147,7 +148,6 @@ func GetRevOrderAllList(ctx *gin.Context, limit, offset int64) {
 	ctx.Status(http.StatusOK)
 	ctx.Writer.Write([]byte(jsonData))
 }
-
 
 // GetUserRankByName 获取用户排名
 func GetUserRankByName(ctx *gin.Context, name string) {
@@ -161,7 +161,7 @@ func GetUserRankByName(ctx *gin.Context, name string) {
 	}
 	ctx.JSON(http.StatusOK, gin.H{
 		"name": name,
-		"rank": fmt.Sprintf("%d", rank + 1),
+		"rank": fmt.Sprintf("%d", rank+1),
 	})
 	// fmt.Printf("name=%s, 排名=%d\n", name, rank+1)
 }
@@ -192,8 +192,8 @@ func AddUserScore(ctx *gin.Context, name string, score float64) {
 	}
 	// fmt.Printf("name=%s, add_score=%f, score=%f\n", name, score, num)
 	ctx.JSON(http.StatusOK, gin.H{
-		"name": name,
+		"name":      name,
 		"add_score": fmt.Sprintf("%f", score),
-		"score": fmt.Sprintf("%f", num),
+		"score":     fmt.Sprintf("%f", num),
 	})
 }

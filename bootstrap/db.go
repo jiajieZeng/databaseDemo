@@ -4,16 +4,17 @@ import (
 	"database/sql"
 	"databaseDemo/app/model"
 	"databaseDemo/global"
-	"go.uber.org/zap"
-	"gopkg.in/natefinch/lumberjack.v2"
-	"gorm.io/driver/mysql"
-	"gorm.io/gorm"
-	"gorm.io/gorm/logger"
 	"io"
 	"log"
 	"os"
 	"strconv"
 	"time"
+
+	"go.uber.org/zap"
+	"gopkg.in/natefinch/lumberjack.v2"
+	"gorm.io/driver/mysql"
+	"gorm.io/gorm"
+	"gorm.io/gorm/logger"
 )
 
 func InitializeDB() *gorm.DB {
@@ -57,7 +58,6 @@ func initMySqlGorm() *gorm.DB {
 		return db
 	}
 }
-
 
 func InitializeDBSQL() *sql.DB {
 	dbConfig := global.App.Config.Database
@@ -124,9 +124,12 @@ func getGormLogWriter() logger.Writer {
 func initMySqlTables(db *gorm.DB) {
 	err := db.AutoMigrate(
 		model.User{},
+		model.ZsetUser{},
+		model.HashUser{},
 	)
 	if err != nil {
 		global.App.Log.Error("migrate table failed", zap.Any("err", err))
 		os.Exit(0)
 	}
+
 }
