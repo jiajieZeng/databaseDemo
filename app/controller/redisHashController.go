@@ -18,7 +18,7 @@ func tran2User(request model.HashRequest) model.HashUser {
 	var user model.HashUser
 	userID, err := strconv.ParseInt(request.UserID, 10, 32)
 	if err != nil {
-		panic("strconv in tran2User")
+		panic(err.Error())
 	}
 	user.UserID = int(userID)
 	digg, err := strconv.ParseInt(request.GotDiggCount, 10, 32)
@@ -310,6 +310,40 @@ func Ex06InitUserCounter(ctx *gin.Context) {
 func AddUser(ctx *gin.Context, user model.HashUser) {
 	db := global.App.DB
 	db.Save(&user)
+	counter := map[string]interface{}{
+		"userID":                   fmt.Sprintf("%d", user.ID),
+		"got_digg_count":           user.GotDiggCount,
+		"got_view_count":           user.GotViewCount,
+		"followee_count":           user.FolloweeCount,
+		"follower_count":           user.FollowerCount,
+		"follow_collect_set_count": user.FollowCollectSetCount,
+		"subscribe_tag_count":      user.SubscribeTagCount,
+	}
+	uid, err := strconv.ParseInt(counter["userID"].(string), 10, 64)
+	key := GetUserCounterKey(uid)
+	pipe := global.App.Redis.Pipeline()
+	rw, err := pipe.Del(ctx, key).Result()
+	if err != nil {
+		fmt.Printf("del %s, rw=%d\n", key, rw)
+	}
+	_, err = pipe.HMSet(ctx, key, counter).Result()
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Printf("设置 uid=%d, key=%s\n", uid, key)
+	// 批量执行上面for循环设置好的hmset命令
+	_, err = pipe.Exec(ctx)
+	if err != nil { // 报错后进行一次额外尝试
+		_, err = pipe.Exec(ctx)
+		if err != nil {
+			ctx.JSON(http.StatusInternalServerError, gin.H{
+				"status": err.Error(),
+			})
+			return
+		}
+	}
+
 	ctx.JSON(http.StatusOK, gin.H{
 		"status": "OK",
 	})

@@ -44,4 +44,15 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 
 	router.POST("/TxRollback", controller.TxRollBack)
 
+	router.POST("/person-by-id", controller.GetPersonByID)
+
+	router.POST("/belongings-by-id", controller.GetBelongingsByID)
+
+	router.POST("/infos-by-id", controller.GetInfosByID)
+
+	router.POST("/all-by-id", controller.GetAllByID)
+
+	router.POST("/all-same-size", controller.GetAllWearSameSize)
+
+	router.POST("/all-same-business", controller.GetAllRunSameBusiness)
 }

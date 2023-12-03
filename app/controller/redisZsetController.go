@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"databaseDemo/app/model"
 	model2 "databaseDemo/app/model"
 	"databaseDemo/global"
 	"fmt"
@@ -67,6 +68,11 @@ func Zset(ctx *gin.Context) {
 		}
 		user := requestBody.ItemNam
 		AddUserScore(ctx, user, score)
+	case "add":
+		var user model.ZsetUser
+		user.Name = requestBody.ItemNam
+		user.Score, _ = strconv.ParseFloat(requestBody.Score, 64)
+		Add(ctx, user)
 	}
 	return
 }
@@ -195,5 +201,18 @@ func AddUserScore(ctx *gin.Context, name string, score float64) {
 		"name":      name,
 		"add_score": fmt.Sprintf("%f", score),
 		"score":     fmt.Sprintf("%f", num),
+	})
+}
+
+func Add(ctx *gin.Context, user model.ZsetUser) {
+	redisData := redis.Z{Member: user.Name, Score: user.Score}
+	_, err := global.App.Redis.ZAdd(ctx, Ex06RankKey, redisData).Result()
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{
+			"status": err.Error(),
+		})
+	}
+	ctx.JSON(http.StatusOK, gin.H{
+		"status": "OK",
 	})
 }
