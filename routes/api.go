@@ -55,4 +55,6 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 	router.POST("/all-same-size", controller.GetAllWearSameSize)
 
 	router.POST("/all-same-business", controller.GetAllRunSameBusiness)
+
+	router.POST("/limitter", controller.Ex03)
 }

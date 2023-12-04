@@ -7390,3 +7390,768 @@
 
 2023/12/03 23:24:08 /root/workspace/databaseDemo/app/controller/redisHashController.go:148 record not found
 [0.416ms] [rows:0] SELECT * FROM `hash_users` WHERE `user_id` = 111 ORDER BY `hash_users`.`id` LIMIT 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.088ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.460ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.260ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.061ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.324ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.151ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.443ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.078ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.269ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.245ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.065ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.260ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.126ms] [rows:-] SELECT * FROM `zset_users` LIMIT 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.369ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'zset_users' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.078ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.299ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.231ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.086ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.295ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.118ms] [rows:-] SELECT * FROM `hash_users` LIMIT 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.428ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'hash_users' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.091ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.292ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.266ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'persons' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.102ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.395ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.112ms] [rows:-] SELECT * FROM `persons` LIMIT 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.407ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'persons' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.077ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.301ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.275ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'webtest' AND table_name = 'persons' AND index_name = 'idx_persons_id'
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.122ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.285ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.233ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'infos' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.082ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.277ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.128ms] [rows:-] SELECT * FROM `infos` LIMIT 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.411ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'infos' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.096ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.287ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.216ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'webtest' AND table_name = 'infos' AND index_name = 'idx_infos_id'
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.078ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.271ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.218ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'belongings' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.080ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.275ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.137ms] [rows:-] SELECT * FROM `belongings` LIMIT 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.358ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'belongings' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.079ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.292ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:02:10 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.222ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'webtest' AND table_name = 'belongings' AND index_name = 'idx_belongings_id'
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.085ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.398ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.247ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.106ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.333ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.130ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.474ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.081ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.308ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.227ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.087ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.342ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.121ms] [rows:-] SELECT * FROM `zset_users` LIMIT 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.387ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'zset_users' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.079ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.308ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.229ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.066ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.324ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.125ms] [rows:-] SELECT * FROM `hash_users` LIMIT 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.432ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'hash_users' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.084ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.333ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.225ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'persons' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.066ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.274ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.187ms] [rows:-] SELECT * FROM `persons` LIMIT 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.438ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'persons' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.086ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.344ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.212ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'webtest' AND table_name = 'persons' AND index_name = 'idx_persons_id'
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.076ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.290ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.246ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'infos' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.087ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.303ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.152ms] [rows:-] SELECT * FROM `infos` LIMIT 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.416ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'infos' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.074ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.317ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.211ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'webtest' AND table_name = 'infos' AND index_name = 'idx_infos_id'
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.126ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.297ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.209ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'belongings' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.059ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.311ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.161ms] [rows:-] SELECT * FROM `belongings` LIMIT 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.360ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'belongings' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.086ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.371ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:03:06 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.224ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'webtest' AND table_name = 'belongings' AND index_name = 'idx_belongings_id'
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.087ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.431ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.260ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.066ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.346ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.177ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.440ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.081ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.302ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.255ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.064ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.284ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.109ms] [rows:-] SELECT * FROM `zset_users` LIMIT 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.538ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'zset_users' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.089ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.271ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.269ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.093ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.266ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.116ms] [rows:-] SELECT * FROM `hash_users` LIMIT 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.390ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'hash_users' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.082ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.295ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.212ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'persons' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.086ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.351ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.163ms] [rows:-] SELECT * FROM `persons` LIMIT 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.416ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'persons' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.083ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.302ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.285ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'webtest' AND table_name = 'persons' AND index_name = 'idx_persons_id'
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.064ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.246ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.248ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'infos' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.064ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.265ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.212ms] [rows:-] SELECT * FROM `infos` LIMIT 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.474ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'infos' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.085ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.279ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.187ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'webtest' AND table_name = 'infos' AND index_name = 'idx_infos_id'
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.089ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.318ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.208ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'belongings' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.110ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.305ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.150ms] [rows:-] SELECT * FROM `belongings` LIMIT 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.386ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'belongings' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.207ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.274ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:05:53 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.202ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'webtest' AND table_name = 'belongings' AND index_name = 'idx_belongings_id'
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.093ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.371ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.219ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.074ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.348ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.138ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.406ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.079ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.263ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.196ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.058ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.258ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.111ms] [rows:-] SELECT * FROM `zset_users` LIMIT 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.336ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'zset_users' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.079ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.274ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.278ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.066ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.245ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.132ms] [rows:-] SELECT * FROM `hash_users` LIMIT 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.378ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'hash_users' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.073ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.259ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.190ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'persons' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.058ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.264ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.126ms] [rows:-] SELECT * FROM `persons` LIMIT 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.334ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'persons' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.079ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.263ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.186ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'webtest' AND table_name = 'persons' AND index_name = 'idx_persons_id'
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.058ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.264ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.176ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'infos' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.070ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.246ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.155ms] [rows:-] SELECT * FROM `infos` LIMIT 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.340ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'infos' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.095ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.264ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.183ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'webtest' AND table_name = 'infos' AND index_name = 'idx_infos_id'
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.055ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.241ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.186ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'belongings' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.059ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.244ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.126ms] [rows:-] SELECT * FROM `belongings` LIMIT 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.372ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'belongings' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.076ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.510ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:07:23 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.414ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'webtest' AND table_name = 'belongings' AND index_name = 'idx_belongings_id'
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.182ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.773ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.531ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.086ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.532ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.325ms] [rows:-] SELECT * FROM `users` LIMIT 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.645ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'users' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.092ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.429ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.285ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'zset_users' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.081ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.343ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.168ms] [rows:-] SELECT * FROM `zset_users` LIMIT 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.621ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'zset_users' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.097ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.324ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.241ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'hash_users' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.066ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.318ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.186ms] [rows:-] SELECT * FROM `hash_users` LIMIT 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.465ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'hash_users' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.086ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.563ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.349ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'persons' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.094ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.456ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.171ms] [rows:-] SELECT * FROM `persons` LIMIT 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.478ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'persons' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.137ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.353ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.235ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'webtest' AND table_name = 'persons' AND index_name = 'idx_persons_id'
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.122ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.292ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.217ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'infos' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.064ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.381ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.169ms] [rows:-] SELECT * FROM `infos` LIMIT 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.525ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'infos' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.144ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.326ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.326ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'webtest' AND table_name = 'infos' AND index_name = 'idx_infos_id'
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.115ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.416ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.454ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'webtest' AND table_name = 'belongings' AND table_type = 'BASE TABLE'
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.106ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.453ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.153ms] [rows:-] SELECT * FROM `belongings` LIMIT 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.432ms] [rows:-] SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale FROM information_schema.columns WHERE table_schema = 'webtest' AND table_name = 'belongings' ORDER BY ORDINAL_POSITION
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.093ms] [rows:-] SELECT DATABASE()
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.301ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'webtest%' ORDER BY SCHEMA_NAME='webtest' DESC,SCHEMA_NAME limit 1
+
+2023/12/04 23:08:46 /root/workspace/databaseDemo/bootstrap/db.go:125
+[0.384ms] [rows:-] SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'webtest' AND table_name = 'belongings' AND index_name = 'idx_belongings_id'
