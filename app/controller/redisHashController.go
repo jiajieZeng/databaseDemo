@@ -16,7 +16,7 @@ const Ex05UserCountKey = "ex05_user_count"
 
 func tran2User(request model.HashRequest) model.HashUser {
 	var user model.HashUser
-	userID, err := strconv.ParseInt(request.UserID, 10, 32)
+	userID, err := strconv.ParseInt(request.ID, 10, 32)
 	if err != nil {
 		panic(err.Error())
 	}
