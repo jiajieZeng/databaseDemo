@@ -1,5 +1,5 @@
 /*script generated for free with OnlineDataGenerator available at: https://www.onlinedatagenerator.com */
-CREATE TABLE infos(ID BIGINT,Business VARCHAR(500),Address VARCHAR(500));
+CREATE TABLE infos(ID BIGINT primary key,Business VARCHAR(500),Address VARCHAR(500), unique index(ID));
 
 INSERT INTO infos VALUES('1','Biolife Grup','Victorian  Lane, 7253');
 INSERT INTO infos VALUES('2','DynCorp','Bolton  Hill, 3934');

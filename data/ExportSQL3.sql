@@ -1,5 +1,5 @@
 /*script generated for free with OnlineDataGenerator available at: https://www.onlinedatagenerator.com */
-CREATE TABLE belongings(ID BIGINT,Cars VARCHAR(500),Pets VARCHAR(500),Clothes_size VARCHAR(500));
+CREATE TABLE belongings(ID BIGINT primary key,Cars VARCHAR(500),Pets VARCHAR(500),Clothes_size VARCHAR(500), unique index(ID));
 
 INSERT INTO belongings VALUES('1','Kia Soul','Huron','M');
 INSERT INTO belongings VALUES('2','BMW M4','Clown Fish','XXL');

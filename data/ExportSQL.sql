@@ -1,5 +1,5 @@
 /*script generated for free with OnlineDataGenerator available at: https://www.onlinedatagenerator.com */
-CREATE TABLE persons(ID BIGINT,home VARCHAR(500),background VARCHAR(500));
+CREATE TABLE persons(ID BIGINT primary key,home VARCHAR(500),background VARCHAR(500), unique index(ID));
 
 INSERT INTO persons VALUES('1','Henderson','University of California, Riverside');
 INSERT INTO persons VALUES('2','Santa Ana','Case Western Reserve University');

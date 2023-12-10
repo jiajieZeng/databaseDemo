@@ -1,5 +1,5 @@
 /*script generated for free with OnlineDataGenerator available at: https://www.onlinedatagenerator.com */
-CREATE TABLE names(ID BIGINT,name VARCHAR(500),last_name VARCHAR(500));
+CREATE TABLE names(ID BIGINT primary key,name VARCHAR(500),last_name VARCHAR(500), unique index(ID));
 
 INSERT INTO names VALUES('1','Marvin','Exton');
 INSERT INTO names VALUES('2','Carrie','Dale');

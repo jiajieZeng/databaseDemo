@@ -12,8 +12,6 @@ import (
 func GetPersonByID(ctx *gin.Context) {
 	db := global.App.DB
 
-	//获取参数
-	//此处使用Bind()函数，可以处理不同格式的前端数据
 	var requestBody model.RequestPerson
 	ctx.ShouldBind(&requestBody)
 	var person model.Persons
@@ -24,8 +22,6 @@ func GetPersonByID(ctx *gin.Context) {
 func GetBelongingsByID(ctx *gin.Context) {
 	db := global.App.DB
 
-	//获取参数
-	//此处使用Bind()函数，可以处理不同格式的前端数据
 	var requestBody model.RequestPerson
 	ctx.ShouldBind(&requestBody)
 	var belongings model.Belongings
@@ -36,8 +32,6 @@ func GetBelongingsByID(ctx *gin.Context) {
 func GetInfosByID(ctx *gin.Context) {
 	db := global.App.DB
 
-	//获取参数
-	//此处使用Bind()函数，可以处理不同格式的前端数据
 	var requestBody model.RequestPerson
 	ctx.ShouldBind(&requestBody)
 	var infos model.Infos
