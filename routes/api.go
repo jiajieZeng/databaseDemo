@@ -53,5 +53,5 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 
 	router.POST("/all-same-business", controller.GetAllRunSameBusiness)
 
-	router.POST("/limitter", controller.Ex03)
+	router.POST("/limitter", controller.Ex02)
 }

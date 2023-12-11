@@ -54,11 +54,6 @@ func Zset(ctx *gin.Context) {
 		user := requestBody.ItemNam
 		GetUserScoreByName(ctx, user)
 	case "add_user_score":
-		// if len(args) < 3 {
-		// 	fmt.Printf("参数错误，可能是缺少需要增加的分值。eg：go run main.go  Ex06 add_user_score user2 10\n")
-		// 	return
-		// }
-		// score, err := strconv.ParseFloat(args[2], 64)
 		s := requestBody.Score
 		score, err := strconv.ParseFloat(s, 64)
 		if err != nil {
@@ -132,18 +127,12 @@ func GetRevOrderAllList(ctx *gin.Context, limit, offset int64) {
 	if err != nil {
 		panic(err)
 	}
-	// list := make(map[string]Value)
 	var result []map[string]string
-	// fmt.Printf("\n榜单:\n")
 	for i, z := range resList {
 		rowData := make(map[string]string)
-		// fmt.Printf("第%d名 %s\t%f\n", i+1, z.Member, z.Score)
-		// s := fmt.Sprintf("%d", i + 1);
-		// zeros := strings.Repeat("0", 15 - len(s))
 		rowData["rank"] = fmt.Sprintf("%d", i+1)
 		rowData["name"] = z.Member.(string)
 		rowData["score"] = fmt.Sprintf("%f", z.Score)
-		// list[fmt.Sprintf("%s%d", zeros, i + 1)] = Value{z.Member.(string), fmt.Sprintf("%f", z.Score)}
 		result = append(result, rowData)
 	}
 	jsonData, err := json.Marshal(result)

@@ -1,62 +1,46 @@
 package controller
 
+// setnx 分布式锁
 import (
 	"context"
-	"fmt"
-	"net/http"
-	"sync/atomic"
-	"time"
-
-	"github.com/gin-gonic/gin"
-	"github.com/go-redis/redis/v9"
-	"github.com/goccy/go-json"
-
 	"databaseDemo/app/common"
 	"databaseDemo/app/model"
 	"databaseDemo/global"
+	"fmt"
+	"net/http"
+	"strconv"
+	"time"
+
+	"github.com/gin-gonic/gin"
+	"github.com/goccy/go-json"
 )
 
-type Ex03Params struct {
+const resourceKey = "syncKey"      // 分布式锁的key
+const exp = 800 * time.Millisecond // 锁的过期时间，避免死锁
+
+// EventLog 搜集日志的结构
+type EventLog struct {
+	eventTime time.Time
+	log       string
 }
 
-var ex03LimitKeyPrefix = "comment_freq_limit"
-var accessQueryNum = int32(0)
-
-const ex03MaxQPS = 10 // 限流次数
-
-// ex03LimitKey 返回key格式为：comment_freq_limit-1669524458 // 用来记录这1秒内的请求数量
-func ex03LimitKey(currentTimeStamp time.Time) string {
-	return fmt.Sprintf("%s-%d", ex03LimitKeyPrefix, currentTimeStamp.Unix())
+// Ex02Params Ex02的自定义函数
+type Ex02Params struct {
 }
 
-// Ex03 简单限流
-func Ex03(ctx *gin.Context) {
+// Ex02 只是体验SetNX的特性，不是高可用的分布式锁实现
+// 该实现存在的问题:
+// (1) 业务超时解锁，导致并发问题。业务执行时间超过锁超时时间
+// (2) redis主备切换临界点问题。主备切换后，A持有的锁还未同步到新的主节点时，B可在新主节点获取锁，导致并发问题。
+// (3) redis集群脑裂，导致出现多个主节点
+func Ex02(ctx *gin.Context) {
 	eventLogger := &common.ConcurrentEventLogger{}
 	// new一个并发执行器
-	cInst := common.NewConcurrentRoutine(100, eventLogger)
+	cInst := common.NewConcurrentRoutine(10, eventLogger)
 	// 并发执行用户自定义函数work
-	cInst.Run(ctx, Ex03Params{}, ex03Work)
-	var mData model.EventLog
+	cInst.Run(ctx, Ex02Params{}, ex02Work)
 	// 按日志时间正序打印日志
 	data := eventLogger.PrintLogs()
-	mData.EventTime = time.Now()
-	mData.Log = fmt.Sprintf("放行总数：%d\n", accessQueryNum)
-	data = append(data, mData)
-	mData.EventTime = time.Now()
-	mData.Log = fmt.Sprintf("\n------\n下一秒请求\n------\n")
-	data = append(data, mData)
-	accessQueryNum = 0
-	time.Sleep(1 * time.Second)
-	// new一个并发执行器
-	cInst = common.NewConcurrentRoutine(10, eventLogger)
-	// 并发执行用户自定义函数work
-	cInst.Run(ctx, Ex03Params{}, ex03Work)
-	// 按日志时间正序打印日志
-	data2 := eventLogger.PrintLogs()
-	data = append(data, data2...)
-	mData.EventTime = time.Now()
-	mData.Log = fmt.Sprintf("放行总数：%d\n", accessQueryNum)
-	data = append(data, mData)
 	jsData, err := json.Marshal(data)
 	if err != nil {
 		panic(err)
@@ -66,37 +50,56 @@ func Ex03(ctx *gin.Context) {
 	ctx.Writer.Write([]byte(jsData))
 }
 
-func ex03Work(ctx context.Context, cInstParam common.CInstParams) {
+func ex02Work(ctx context.Context, cInstParam common.CInstParams) {
 	routine := cInstParam.Routine
 	eventLogger := cInstParam.ConcurrentEventLogger
-	key := ex03LimitKey(time.Now())
-	RedisClient := global.App.Redis
-	currentQPS, err := RedisClient.Incr(ctx, key).Result()
-	if err != nil || err == redis.Nil {
-		err = RedisClient.Incr(ctx, ex03LimitKey(time.Now())).Err()
+	defer ex02ReleaseLock(ctx, routine, eventLogger)
+	for {
+		// 1. 尝试获取锁
+		// exp - 锁过期设置,避免异常死锁
+		acquired, err := global.App.Redis.SetNX(ctx, resourceKey, routine, exp).Result() // 尝试获取锁
 		if err != nil {
+			eventLogger.Append(model.EventLog{
+				EventTime: time.Now(), Log: fmt.Sprintf("[%s] error routine[%d], %v", time.Now().Format(time.RFC3339Nano), routine, err),
+			})
 			panic(err)
+		}
+		if acquired {
+			// 2. 成功获取锁
+			eventLogger.Append(model.EventLog{
+				EventTime: time.Now(), Log: fmt.Sprintf("[%s] routine[%d] 获取锁", time.Now().Format(time.RFC3339Nano), routine),
+			})
+			// 3. sleep 模拟业务逻辑耗时
+			time.Sleep(10 * time.Millisecond)
+			eventLogger.Append(model.EventLog{
+				EventTime: time.Now(), Log: fmt.Sprintf("[%s] routine[%d] 完成业务逻辑", time.Now().Format(time.RFC3339Nano), routine),
+			})
+			return
+		} else {
+			// 没有获得锁，等待后重试
+			time.Sleep(100 * time.Millisecond)
 		}
 	}
-	if currentQPS > ex03MaxQPS {
-		// 超过流量限制，请求被限制
+}
+
+func ex02ReleaseLock(ctx context.Context, routine int, eventLogger *common.ConcurrentEventLogger) {
+	routineMark, _ := global.App.Redis.Get(ctx, resourceKey).Result()
+	if strconv.FormatInt(int64(routine), 10) != routineMark {
+		// 其它协程误删lock
+		panic(fmt.Sprintf("del err lock[%s] can not del by [%d]", routineMark, routine))
+	}
+	set, err := global.App.Redis.Del(ctx, resourceKey).Result()
+	if set == 1 {
 		eventLogger.Append(model.EventLog{
-			EventTime: time.Now(),
-			Log:       common.LogFormat(routine, "被限流[%d]", currentQPS),
+			EventTime: time.Now(), Log: fmt.Sprintf("[%s] routine[%d] 释放锁", time.Now().Format(time.RFC3339Nano), routine),
 		})
-		// sleep 模拟业务逻辑耗时
-		time.Sleep(50 * time.Millisecond)
-		err = RedisClient.Decr(ctx, key).Err()
-		if err != nil {
-			panic(err)
-		}
 	} else {
-		// 流量放行
 		eventLogger.Append(model.EventLog{
-			EventTime: time.Now(),
-			Log:       common.LogFormat(routine, "流量放行[%d]", currentQPS),
+			EventTime: time.Now(), Log: fmt.Sprintf("[%s] routine[%d] no lock to del", time.Now().Format(time.RFC3339Nano), routine),
 		})
-		atomic.AddInt32(&accessQueryNum, 1)
-		time.Sleep(20 * time.Millisecond)
+	}
+	if err != nil {
+		// fmt.Errorf("[%s] error routine=%d, %v", time.Now().Format(time.RFC3339Nano), routine, err)
+		panic(err)
 	}
 }

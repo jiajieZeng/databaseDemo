@@ -95,28 +95,6 @@ func QueryFirst(ctx *gin.Context) {
 }
 
 func RawSQL(ctx *gin.Context) {
-	//db := global.App.DB
-	//var requestBody model2.RequestBody
-	//if err := ctx.ShouldBindJSON(&requestBody); err != nil {
-	//	panic("RawSQL: ctx.ShouldBindJSON failed\n")
-	//}
-	//// var result Result
-	//// db.Raw("SELECT id, name, age FROM users WHERE id = ?", 3).Scan(&result)
-	//sql := requestBody.SQL
-	//// var result model.UserResult
-	//// db.Raw(sql).Scan(&result)
-	//// ctx.JSON(http.StatusUnprocessableEntity, gin.H{
-	//// 	"id":         result.ID,
-	//// 	"created_at": result.Created_at,
-	//// 	"deleted_at": result.Deleted_at,
-	//// 	"update_at":  result.Updated_at,
-	//// 	"name":       result.Name,
-	//// 	"telephone":  result.Telephone,
-	//// 	"password":   result.Password,
-	//// })
-	//var users []model2.UserResult
-	//db.Raw(sql).Scan(&users)
-	//ctx.JSON(http.StatusOK, users)
 
 	db := global.App.RDB
 	var requestBody model2.RequestBody

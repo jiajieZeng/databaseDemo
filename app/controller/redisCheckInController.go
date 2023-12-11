@@ -83,7 +83,6 @@ func CheckIn(ctx *gin.Context) {
 				})
 				return
 			}
-			// fmt.Printf("用户[%d]连续签到：%d(天), 过期时间:%s", userID, day, expAt.Format("2006-01-02 15:04:05"))
 			ctx.JSON(http.StatusOK, gin.H{
 				"status": fmt.Sprintf("用户[%s]连续签到：%d(天), 过期时间:%s", userID, day, expAt.Format("2006-01-02 15:04:05")),
 			})
