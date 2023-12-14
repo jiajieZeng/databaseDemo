@@ -1,19 +1,19 @@
 package model
 
 type Persons struct {
-	ID         int64  `gorm:"uniqueIndex;primarykey;int;not null"`
+	ID         int64  `gorm:"uniqueIndex;primarykey;bigint;not null"`
 	Home       string `gorm:"varchar(40);not null"`
 	Background string `gorm:"varchar(40);not null"`
 }
 
 type Infos struct {
-	ID       int64  `gorm:"uniqueIndex;primarykey;int;not null"`
+	ID       int64  `gorm:"uniqueIndex;primarykey;bigint;not null"`
 	Business string `gorm:"varchar(40);not null"`
 	Address  string `gorm:"varchar(40);not null"`
 }
 
 type Belongings struct {
-	ID          int64  `gorm:"uniqueIndex;primarykey;int;not null"`
+	ID          int64  `gorm:"uniqueIndex;primarykey;bigint;not null"`
 	Cars        string `gorm:"varchar(40);not null"`
 	Pets        string `gorm:"varchar(40);not null"`
 	ClothesSize string `gorm:"varchar(40);not null"`
